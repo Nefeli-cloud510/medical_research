@@ -1,0 +1,248 @@
+{
+  "run_ts_utc": "2026-10-06T08:34:22+00:00",
+  "scope": "major5_text_cleaning_prep_seq_clean_strict_prior_audit",
+  "input_path": "D:\\medical_research\\data\\analysis\\major5_text_cleaning_prep_seq_clean.parquet",
+  "totals": {
+    "total_rows": 2367171,
+    "total_questions": 270317
+  },
+  "same_timestamp_stats_within_question": {
+    "same_timestamp_answer_rows": 14167,
+    "same_timestamp_answer_row_rate": 0.005985,
+    "same_timestamp_question_count": 6094,
+    "same_timestamp_question_rate": 0.022544,
+    "same_timestamp_group_count": 7039,
+    "max_same_timestamp_group_size": 4
+  },
+  "strict_prior_stats_current_sample": {
+    "strict_prior_at_least_1_answer_count": 2096182,
+    "strict_prior_at_least_1_answer_rate": 0.885522,
+    "strict_prior_at_least_2_answer_count": 1862912,
+    "strict_prior_at_least_2_answer_rate": 0.786978
+  },
+  "top_same_timestamp_groups": [
+    {
+      "question_id": 127929663524864001,
+      "answer_create_time": "2020-04-19 20:11:47",
+      "same_timestamp_group_size": 4,
+      "strict_prior_count_current": 7
+    },
+    {
+      "question_id": 187000269857390594,
+      "answer_create_time": "2021-03-11 20:28:35",
+      "same_timestamp_group_size": 4,
+      "strict_prior_count_current": 39
+    },
+    {
+      "question_id": 67741812497907714,
+      "answer_create_time": "2019-05-23 15:59:04",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 1
+    },
+    {
+      "question_id": 69595454580523011,
+      "answer_create_time": "2019-06-02 21:31:37",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 1
+    },
+    {
+      "question_id": 71177295043264515,
+      "answer_create_time": "2019-06-11 15:02:50",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 9
+    },
+    {
+      "question_id": 71898267748728833,
+      "answer_create_time": "2019-06-15 14:32:28",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 3
+    },
+    {
+      "question_id": 73576659648839680,
+      "answer_create_time": "2019-06-24 20:55:26",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 3
+    },
+    {
+      "question_id": 86901464821170176,
+      "answer_create_time": "2019-09-06 10:50:18",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 6
+    },
+    {
+      "question_id": 88900975288500227,
+      "answer_create_time": "2019-09-17 10:39:35",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 5
+    },
+    {
+      "question_id": 90208335229386754,
+      "answer_create_time": "2019-09-24 15:50:45",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 12
+    },
+    {
+      "question_id": 92739625333882883,
+      "answer_create_time": "2019-10-08 15:04:41",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 4
+    },
+    {
+      "question_id": 101306077351575555,
+      "answer_create_time": "2019-11-24 21:44:19",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 1
+    },
+    {
+      "question_id": 101417095599816704,
+      "answer_create_time": "2019-11-25 12:36:30",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 2
+    },
+    {
+      "question_id": 102175996347744257,
+      "answer_create_time": "2019-11-29 17:00:05",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 6
+    },
+    {
+      "question_id": 103113361123737602,
+      "answer_create_time": "2019-12-04 21:08:08",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 4
+    },
+    {
+      "question_id": 104484788735377410,
+      "answer_create_time": "2019-12-12 10:47:04",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 0
+    },
+    {
+      "question_id": 105794004651638785,
+      "answer_create_time": "2019-12-19 16:11:52",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 5
+    },
+    {
+      "question_id": 106146031871229952,
+      "answer_create_time": "2019-12-21 14:52:47",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 3
+    },
+    {
+      "question_id": 112490404856758273,
+      "answer_create_time": "2020-01-25 15:10:39",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 5
+    },
+    {
+      "question_id": 113614545131470848,
+      "answer_create_time": "2020-01-31 20:03:41",
+      "same_timestamp_group_size": 3,
+      "strict_prior_count_current": 7
+    }
+  ],
+  "strict_prior_distribution_preview": [
+    {
+      "strict_prior_count_current": 0,
+      "answer_count": 270989,
+      "answer_share": 0.114478
+    },
+    {
+      "strict_prior_count_current": 1,
+      "answer_count": 233270,
+      "answer_share": 0.098544
+    },
+    {
+      "strict_prior_count_current": 2,
+      "answer_count": 219487,
+      "answer_share": 0.092721
+    },
+    {
+      "strict_prior_count_current": 3,
+      "answer_count": 204300,
+      "answer_share": 0.086306
+    },
+    {
+      "strict_prior_count_current": 4,
+      "answer_count": 189721,
+      "answer_share": 0.080147
+    },
+    {
+      "strict_prior_count_current": 5,
+      "answer_count": 175811,
+      "answer_share": 0.074271
+    },
+    {
+      "strict_prior_count_current": 6,
+      "answer_count": 163172,
+      "answer_share": 0.068931
+    },
+    {
+      "strict_prior_count_current": 7,
+      "answer_count": 151397,
+      "answer_share": 0.063957
+    },
+    {
+      "strict_prior_count_current": 8,
+      "answer_count": 140157,
+      "answer_share": 0.059209
+    },
+    {
+      "strict_prior_count_current": 9,
+      "answer_count": 126778,
+      "answer_share": 0.053557
+    },
+    {
+      "strict_prior_count_current": 10,
+      "answer_count": 103266,
+      "answer_share": 0.043624
+    },
+    {
+      "strict_prior_count_current": 11,
+      "answer_count": 83903,
+      "answer_share": 0.035444
+    },
+    {
+      "strict_prior_count_current": 12,
+      "answer_count": 67042,
+      "answer_share": 0.028322
+    },
+    {
+      "strict_prior_count_current": 13,
+      "answer_count": 52677,
+      "answer_share": 0.022253
+    },
+    {
+      "strict_prior_count_current": 14,
+      "answer_count": 40562,
+      "answer_share": 0.017135
+    },
+    {
+      "strict_prior_count_current": 15,
+      "answer_count": 31132,
+      "answer_share": 0.013152
+    },
+    {
+      "strict_prior_count_current": 16,
+      "answer_count": 23952,
+      "answer_share": 0.010118
+    },
+    {
+      "strict_prior_count_current": 17,
+      "answer_count": 18244,
+      "answer_share": 0.007707
+    },
+    {
+      "strict_prior_count_current": 18,
+      "answer_count": 13723,
+      "answer_share": 0.005797
+    },
+    {
+      "strict_prior_count_current": 19,
+      "answer_count": 9792,
+      "answer_share": 0.004137
+    }
+  ],
+  "note": "严格前序人数按当前 major5 样本重新计算；同一 question_id 内时间戳完全相同的回答互不计入彼此的严格前序。"
+}

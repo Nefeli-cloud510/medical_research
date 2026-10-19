@@ -1,0 +1,11 @@
+{
+  "run_ts_utc": "2026-09-29T03:10:28+00:00",
+  "scope": "answer_question_only",
+  "input_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid.parquet",
+  "original_rows": 2837042,
+  "dropped_invalid_time_rows": 193,
+  "filtered_rows": 2836849,
+  "drop_rate": 6.8e-05,
+  "filter_rule": "keep rows where is_answer_time_valid == True"
+}

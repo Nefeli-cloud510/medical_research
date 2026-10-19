@@ -1,0 +1,202 @@
+{
+  "run_ts_utc": "2026-10-06T10:24:47+00:00",
+  "scope": "flow_run_text_features",
+  "inputs": {
+    "answer_sample_path": "D:\\medical_research\\data\\analysis\\major5_stratified_question_samples_answers.parquet",
+    "sentence_table_path": "D:\\medical_research\\data\\analysis\\major5_answer_sentences.parquet",
+    "sample_layer": "flow_run"
+  },
+  "outputs": {
+    "answer_feature_path": "D:\\medical_research\\data\\analysis\\flow_run_answer_text_features.parquet",
+    "sentence_feature_path": "D:\\medical_research\\data\\analysis\\flow_run_sentence_text_features.parquet"
+  },
+  "embedding_plan": {
+    "model_name": "BAAI/bge-base-zh-v1.5",
+    "library": "sentence_transformers",
+    "recommended_device_from_user": "cuda",
+    "current_env_cuda_available": false,
+    "current_env_effective_device": "cpu",
+    "note": "本步先计算文本中间层特征；下一步可直接对 current_answer_text 与 strict_prior_text_concat 计算 BGE 向量。"
+  },
+  "tokenization": {
+    "tool": "jieba.lcut",
+    "drop_punctuation_only_tokens": true,
+    "token_separator_for_joined_text": " "
+  },
+  "feature_definitions": {
+    "strict_prior_answer_count_current": "同一 question_id 内，时间戳严格早于当前回答的前序回答数；同时间戳回答不互为前序。",
+    "strict_prior_total_char_count_current": "严格前序回答文本的总字符数。",
+    "current_answer_char_count": "当前回答文本字符数。",
+    "strict_prior_text_concat": "严格前序回答按时间顺序拼接后的文本版本。"
+  },
+  "counts": {
+    "flow_run_question_count": 1000,
+    "flow_run_answer_rows": 8948,
+    "flow_run_sentence_rows": 25624,
+    "answers_with_strict_prior": 7947,
+    "answers_with_strict_prior_rate": 0.888131,
+    "max_strict_prior_answer_count": 24,
+    "max_strict_prior_total_char_count": 3121
+  },
+  "preview": {
+    "answer_feature_head": [
+      {
+        "sample_layer": "flow_run",
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|nSJkN85982164|1",
+        "user_id": "nSJkN85982164",
+        "time_seq": 1,
+        "seq": 1,
+        "answer_create_time": "2019-11-19T10:39:11",
+        "question_desc": "医生好，乳头上一直有这样一个黑痣，没有变大，不是最近出现的，最近几年一直都有。但是感觉边缘不是特别规则，请问这个有可能是黑色素瘤吗？",
+        "answer_text": "通过描述和图片考虑是黑色素痣。一般不需要治疗观察就可以。",
+        "current_answer_char_count": 28,
+        "answer_tokens_json": "[\"通过\", \"描述\", \"和\", \"图片\", \"考虑\", \"是\", \"黑\", \"色素痣\", \"一般\", \"不\", \"需要\", \"治疗\", \"观察\", \"就\", \"可以\"]",
+        "answer_tokens_joined": "通过 描述 和 图片 考虑 是 黑 色素痣 一般 不 需要 治疗 观察 就 可以",
+        "answer_token_count": 15,
+        "strict_prior_event_ids_json": "[]",
+        "strict_prior_answer_count_current": 0,
+        "strict_prior_total_char_count_current": 0,
+        "strict_prior_text_concat": "",
+        "strict_prior_text_concat_char_count": 0
+      },
+      {
+        "sample_layer": "flow_run",
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|tqayV25777178|2",
+        "user_id": "tqayV25777178",
+        "time_seq": 2,
+        "seq": 2,
+        "answer_create_time": "2019-11-19T10:40:32",
+        "question_desc": "医生好，乳头上一直有这样一个黑痣，没有变大，不是最近出现的，最近几年一直都有。但是感觉边缘不是特别规则，请问这个有可能是黑色素瘤吗？",
+        "answer_text": "你好，没有变大、扩大、破溃的趋势。不一定是恶性的--黑色素瘤。这个部位还是比较特殊，建议你去医院做皮肤镜等检查是否为恶性，必要时行病理活检。",
+        "current_answer_char_count": 70,
+        "answer_tokens_json": "[\"你好\", \"没有\", \"变\", \"大\", \"扩大\", \"破溃\", \"的\", \"趋势\", \"不\", \"一定\", \"是\", \"恶性\", \"的\", \"黑色素瘤\", \"这个\", \"部位\", \"还是\", \"比较\", \"特殊\", \"建议\", \"你\", \"去\", \"医院\", \"做\", \"皮肤\", \"镜\", \"等\", \"检查\", \"是否\", \"为\", \"恶性\", \"必要\", \"时\", \"行\", \"病理\", \"活检\"]",
+        "answer_tokens_joined": "你好 没有 变 大 扩大 破溃 的 趋势 不 一定 是 恶性 的 黑色素瘤 这个 部位 还是 比较 特殊 建议 你 去 医院 做 皮肤 镜 等 检查 是否 为 恶性 必要 时 行 病理 活检",
+        "answer_token_count": 36,
+        "strict_prior_event_ids_json": "[\"100316349464608769|nSJkN85982164|1\"]",
+        "strict_prior_answer_count_current": 1,
+        "strict_prior_total_char_count_current": 28,
+        "strict_prior_text_concat": "通过描述和图片考虑是黑色素痣。一般不需要治疗观察就可以。",
+        "strict_prior_text_concat_char_count": 28
+      },
+      {
+        "sample_layer": "flow_run",
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|aYTTG74395789|3",
+        "user_id": "aYTTG74395789",
+        "time_seq": 3,
+        "seq": 3,
+        "answer_create_time": "2019-11-19T10:40:53",
+        "question_desc": "医生好，乳头上一直有这样一个黑痣，没有变大，不是最近出现的，最近几年一直都有。但是感觉边缘不是特别规则，请问这个有可能是黑色素瘤吗？",
+        "answer_text": "依据你提供的病史及皮疹临床表现，考虑是局部角化，色素深。建议：去正规医院皮肤科瞧瞧，做皮肤镜检查，可明确诊断。",
+        "current_answer_char_count": 55,
+        "answer_tokens_json": "[\"依据\", \"你\", \"提供\", \"的\", \"病史\", \"及\", \"皮疹\", \"临床表现\", \"考虑\", \"是\", \"局部\", \"角化\", \"色素\", \"深\", \"建议\", \"去\", \"正规\", \"医院\", \"皮肤科\", \"瞧瞧\", \"做\", \"皮肤\", \"镜检查\", \"可\", \"明确\", \"诊断\"]",
+        "answer_tokens_joined": "依据 你 提供 的 病史 及 皮疹 临床表现 考虑 是 局部 角化 色素 深 建议 去 正规 医院 皮肤科 瞧瞧 做 皮肤 镜检查 可 明确 诊断",
+        "answer_token_count": 26,
+        "strict_prior_event_ids_json": "[\"100316349464608769|nSJkN85982164|1\", \"100316349464608769|tqayV25777178|2\"]",
+        "strict_prior_answer_count_current": 2,
+        "strict_prior_total_char_count_current": 98,
+        "strict_prior_text_concat": "通过描述和图片考虑是黑色素痣。一般不需要治疗观察就可以。\n\n你好，没有变大、扩大、破溃的趋势。不一定是恶性的--黑色素瘤。这个部位还是比较特殊，建议你去医院做皮肤镜等检查是否为恶性，必要时行病理活检。",
+        "strict_prior_text_concat_char_count": 98
+      },
+      {
+        "sample_layer": "flow_run",
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|FTAdW78530440|4",
+        "user_id": "FTAdW78530440",
+        "time_seq": 4,
+        "seq": 4,
+        "answer_create_time": "2019-11-19T10:42:09",
+        "question_desc": "医生好，乳头上一直有这样一个黑痣，没有变大，不是最近出现的，最近几年一直都有。但是感觉边缘不是特别规则，请问这个有可能是黑色素瘤吗？",
+        "answer_text": "概率很小。看着色素分布还好，但是有增生感觉。皮肤科做个皮肤镜，看下色素模式，良性的话就不处理。如果有提示高风险，可以手术切除。",
+        "current_answer_char_count": 63,
+        "answer_tokens_json": "[\"概率\", \"很小\", \"看着\", \"色素\", \"分布\", \"还好\", \"但是\", \"有\", \"增生\", \"感觉\", \"皮肤科\", \"做个\", \"皮肤\", \"镜\", \"看\", \"下\", \"色素\", \"模式\", \"良性\", \"的话\", \"就\", \"不\", \"处理\", \"如果\", \"有\", \"提示\", \"高风险\", \"可以\", \"手术\", \"切除\"]",
+        "answer_tokens_joined": "概率 很小 看着 色素 分布 还好 但是 有 增生 感觉 皮肤科 做个 皮肤 镜 看 下 色素 模式 良性 的话 就 不 处理 如果 有 提示 高风险 可以 手术 切除",
+        "answer_token_count": 30,
+        "strict_prior_event_ids_json": "[\"100316349464608769|nSJkN85982164|1\", \"100316349464608769|tqayV25777178|2\", \"100316349464608769|aYTTG74395789|3\"]",
+        "strict_prior_answer_count_current": 3,
+        "strict_prior_total_char_count_current": 153,
+        "strict_prior_text_concat": "通过描述和图片考虑是黑色素痣。一般不需要治疗观察就可以。\n\n你好，没有变大、扩大、破溃的趋势。不一定是恶性的--黑色素瘤。这个部位还是比较特殊，建议你去医院做皮肤镜等检查是否为恶性，必要时行病理活检。\n\n依据你提供的病史及皮疹临床表现，考虑是局部角化，色素深。建议：去正规医院皮肤科瞧瞧，做皮肤镜检查，可明确诊断。",
+        "strict_prior_text_concat_char_count": 153
+      },
+      {
+        "sample_layer": "flow_run",
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|QaaNS103568900|5",
+        "user_id": "QaaNS103568900",
+        "time_seq": 5,
+        "seq": 5,
+        "answer_create_time": "2019-11-19T10:43:42",
+        "question_desc": "医生好，乳头上一直有这样一个黑痣，没有变大，不是最近出现的，最近几年一直都有。但是感觉边缘不是特别规则，请问这个有可能是黑色素瘤吗？",
+        "answer_text": "从皮损看，不一定是色素痣，更像脂溢性角化。我建议做个皮肤镜确诊下。如果是色素痣，也不考虑黑素瘤，皮损特点基本不符合黑素瘤，不用担心",
+        "current_answer_char_count": 65,
+        "answer_tokens_json": "[\"从\", \"皮损\", \"看\", \"不\", \"一定\", \"是\", \"色素痣\", \"更\", \"像\", \"脂溢性\", \"角化\", \"我\", \"建议\", \"做个\", \"皮肤\", \"镜\", \"确诊\", \"下\", \"如果\", \"是\", \"色素痣\", \"也\", \"不\", \"考虑\", \"黑素瘤\", \"皮损\", \"特点\", \"基本\", \"不\", \"符合\", \"黑素瘤\", \"不用\", \"担心\"]",
+        "answer_tokens_joined": "从 皮损 看 不 一定 是 色素痣 更 像 脂溢性 角化 我 建议 做个 皮肤 镜 确诊 下 如果 是 色素痣 也 不 考虑 黑素瘤 皮损 特点 基本 不 符合 黑素瘤 不用 担心",
+        "answer_token_count": 33,
+        "strict_prior_event_ids_json": "[\"100316349464608769|nSJkN85982164|1\", \"100316349464608769|tqayV25777178|2\", \"100316349464608769|aYTTG74395789|3\", \"100316349464608769|FTAdW78530440|4\"]",
+        "strict_prior_answer_count_current": 4,
+        "strict_prior_total_char_count_current": 216,
+        "strict_prior_text_concat": "通过描述和图片考虑是黑色素痣。一般不需要治疗观察就可以。\n\n你好，没有变大、扩大、破溃的趋势。不一定是恶性的--黑色素瘤。这个部位还是比较特殊，建议你去医院做皮肤镜等检查是否为恶性，必要时行病理活检。\n\n依据你提供的病史及皮疹临床表现，考虑是局部角化，色素深。建议：去正规医院皮肤科瞧瞧，做皮肤镜检查，可明确诊断。\n\n概率很小。看着色素分布还好，但是有增生感觉。皮肤科做个皮肤镜，看下色素模式，良性的话就不处理。如果有提示高风险，可以手术切除。",
+        "strict_prior_text_concat_char_count": 216
+      }
+    ],
+    "sentence_feature_head": [
+      {
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|FTAdW78530440|4",
+        "sentence_id": "100316349464608769|FTAdW78530440|4_s1",
+        "sentence_order": 1,
+        "sentence_text": "概率很小。",
+        "sentence_char_count": 5,
+        "sentence_tokens_json": "[\"概率\", \"很小\"]",
+        "sentence_tokens_joined": "概率 很小",
+        "sentence_token_count": 2
+      },
+      {
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|FTAdW78530440|4",
+        "sentence_id": "100316349464608769|FTAdW78530440|4_s2",
+        "sentence_order": 2,
+        "sentence_text": "看着色素分布还好，但是有增生感觉。",
+        "sentence_char_count": 17,
+        "sentence_tokens_json": "[\"看着\", \"色素\", \"分布\", \"还好\", \"但是\", \"有\", \"增生\", \"感觉\"]",
+        "sentence_tokens_joined": "看着 色素 分布 还好 但是 有 增生 感觉",
+        "sentence_token_count": 8
+      },
+      {
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|FTAdW78530440|4",
+        "sentence_id": "100316349464608769|FTAdW78530440|4_s3",
+        "sentence_order": 3,
+        "sentence_text": "皮肤科做个皮肤镜，看下色素模式，良性的话就不处理。",
+        "sentence_char_count": 25,
+        "sentence_tokens_json": "[\"皮肤科\", \"做个\", \"皮肤\", \"镜\", \"看\", \"下\", \"色素\", \"模式\", \"良性\", \"的话\", \"就\", \"不\", \"处理\"]",
+        "sentence_tokens_joined": "皮肤科 做个 皮肤 镜 看 下 色素 模式 良性 的话 就 不 处理",
+        "sentence_token_count": 13
+      },
+      {
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|FTAdW78530440|4",
+        "sentence_id": "100316349464608769|FTAdW78530440|4_s4",
+        "sentence_order": 4,
+        "sentence_text": "如果有提示高风险，可以手术切除。",
+        "sentence_char_count": 16,
+        "sentence_tokens_json": "[\"如果\", \"有\", \"提示\", \"高风险\", \"可以\", \"手术\", \"切除\"]",
+        "sentence_tokens_joined": "如果 有 提示 高风险 可以 手术 切除",
+        "sentence_token_count": 7
+      },
+      {
+        "question_id": "100316349464608769",
+        "event_id": "100316349464608769|ISFgj28667251|10",
+        "sentence_id": "100316349464608769|ISFgj28667251|10_s1",
+        "sentence_order": 1,
+        "sentence_text": "您好 ，从您所发的照片看您的情况，考虑是色素痣的可能性很大。",
+        "sentence_char_count": 30,
+        "sentence_tokens_json": "[\"您好\", \"从\", \"您\", \"所发\", \"的\", \"照片\", \"看\", \"您\", \"的\", \"情况\", \"考虑\", \"是\", \"色素痣\", \"的\", \"可能性\", \"很大\"]",
+        "sentence_tokens_joined": "您好 从 您 所发 的 照片 看 您 的 情况 考虑 是 色素痣 的 可能性 很大",
+        "sentence_token_count": 16
+      }
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "run_ts_utc": "2026-10-06T05:42:28+00:00",
+  "scope": "answer_question_only_core_physician_titles_second_round_nonstandard_fill",
+  "input_analysis_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid_core_physician_titles_with_hospitallevel_filled.parquet",
+  "manual_fill_path": "D:\\medical_research\\outputs\\tables\\10_nonstandard_hospital_levels_for_manual_search.xlsx",
+  "output_analysis_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid_core_physician_titles_with_hospitallevel_filled_round2.parquet",
+  "manual_fill_quality": {
+    "manual_rows_after_dedup": 214,
+    "manual_rows_with_nonempty_level": 214,
+    "manual_rows_with_round2_override": 214
+  },
+  "round2_update_results": {
+    "round2_touched_rows": 66608,
+    "round2_touched_distinct_hospitals": 214,
+    "level_updated_rows": 66608,
+    "level_changed_rows": 66608,
+    "source_updated_rows": 0,
+    "note_updated_rows": 66608
+  },
+  "match_results_after_fill": {
+    "analysis_total_rows": 2748748,
+    "matched_rows": 2615677,
+    "matched_row_rate": 0.951589,
+    "unmatched_rows": 133071,
+    "unmatched_row_rate": 0.048411,
+    "analysis_distinct_hospitals": 5169,
+    "matched_distinct_hospitals": 4622,
+    "matched_distinct_hospital_rate": 0.894177,
+    "unmatched_distinct_hospitals": 547,
+    "unmatched_distinct_hospital_rate": 0.105823
+  },
+  "nonstandard_label_results": {
+    "nonstandard_rows": 379504,
+    "nonstandard_row_rate": 0.138064,
+    "nonstandard_distinct_hospitals": 1394,
+    "nonstandard_distinct_hospital_rate": 0.269685
+  },
+  "top_distribution_rows": [
+    {
+      "hospitallevel": "三级甲等",
+      "row_count": 1963936,
+      "row_share": 0.714484,
+      "distinct_hospital_count": 1770,
+      "distinct_hospital_share": 0.342426
+    },
+    {
+      "hospitallevel": "二级甲等",
+      "row_count": 280266,
+      "row_share": 0.101961,
+      "distinct_hospital_count": 1395,
+      "distinct_hospital_share": 0.269878
+    },
+    {
+      "hospitallevel": "一级医院",
+      "row_count": 151205,
+      "row_share": 0.055009,
+      "distinct_hospital_count": 453,
+      "distinct_hospital_share": 0.087638
+    },
+    {
+      "hospitallevel": "UNMATCHED",
+      "row_count": 133071,
+      "row_share": 0.048411,
+      "distinct_hospital_count": 547,
+      "distinct_hospital_share": 0.105823
+    },
+    {
+      "hospitallevel": "三级医院",
+      "row_count": 53597,
+      "row_share": 0.019499,
+      "distinct_hospital_count": 243,
+      "distinct_hospital_share": 0.047011
+    },
+    {
+      "hospitallevel": "一级甲等",
+      "row_count": 47484,
+      "row_share": 0.017275,
+      "distinct_hospital_count": 196,
+      "distinct_hospital_share": 0.037918
+    },
+    {
+      "hospitallevel": "二级乙等",
+      "row_count": 43556,
+      "row_share": 0.015846,
+      "distinct_hospital_count": 173,
+      "distinct_hospital_share": 0.033469
+    },
+    {
+      "hospitallevel": "三级乙等",
+      "row_count": 31929,
+      "row_share": 0.011616,
+      "distinct_hospital_count": 207,
+      "distinct_hospital_share": 0.040046
+    },
+    {
+      "hospitallevel": "二级医院",
+      "row_count": 29358,
+      "row_share": 0.01068,
+      "distinct_hospital_count": 101,
+      "distinct_hospital_share": 0.01954
+    },
+    {
+      "hospitallevel": "其他",
+      "row_count": 7310,
+      "row_share": 0.002659,
+      "distinct_hospital_count": 33,
+      "distinct_hospital_share": 0.006384
+    },
+    {
+      "hospitallevel": "对外综合",
+      "row_count": 4322,
+      "row_share": 0.001572,
+      "distinct_hospital_count": 7,
+      "distinct_hospital_share": 0.001354
+    },
+    {
+      "hospitallevel": "一级乙等",
+      "row_count": 1313,
+      "row_share": 0.000478,
+      "distinct_hospital_count": 12,
+      "distinct_hospital_share": 0.002322
+    },
+    {
+      "hospitallevel": "三级丙等",
+      "row_count": 470,
+      "row_share": 0.000171,
+      "distinct_hospital_count": 5,
+      "distinct_hospital_share": 0.000967
+    },
+    {
+      "hospitallevel": "县级甲等疾控中心",
+      "row_count": 313,
+      "row_share": 0.000114,
+      "distinct_hospital_count": 1,
+      "distinct_hospital_share": 0.000193
+    },
+    {
+      "hospitallevel": "二级丙等",
+      "row_count": 289,
+      "row_share": 0.000105,
+      "distinct_hospital_count": 16,
+      "distinct_hospital_share": 0.003095
+    },
+    {
+      "hospitallevel": "对外专科",
+      "row_count": 138,
+      "row_share": 5e-05,
+      "distinct_hospital_count": 3,
+      "distinct_hospital_share": 0.00058
+    },
+    {
+      "hospitallevel": "二级甲等（已晋升三级）",
+      "row_count": 128,
+      "row_share": 4.7e-05,
+      "distinct_hospital_count": 4,
+      "distinct_hospital_share": 0.000774
+    },
+    {
+      "hospitallevel": "二级甲等→已升三级",
+      "row_count": 61,
+      "row_share": 2.2e-05,
+      "distinct_hospital_count": 1,
+      "distinct_hospital_share": 0.000193
+    },
+    {
+      "hospitallevel": "一级社区卫生服务中心",
+      "row_count": 1,
+      "row_share": 0.0,
+      "distinct_hospital_count": 1,
+      "distinct_hospital_share": 0.000193
+    },
+    {
+      "hospitallevel": "一级丙等",
+      "row_count": 1,
+      "row_share": 0.0,
+      "distinct_hospital_count": 1,
+      "distinct_hospital_share": 0.000193
+    }
+  ]
+}

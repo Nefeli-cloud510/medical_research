@@ -1,0 +1,4 @@
+﻿field,missing_count,missing_rate,non_missing_unique_count
+gender,174212,0.6259,2
+age,178625,0.6417,101
+address,179379,0.6444,384

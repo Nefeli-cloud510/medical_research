@@ -1,0 +1,285 @@
+{
+  "run_ts_utc": "2026-09-21T17:52:47+00:00",
+  "raw_dir": "D:\\medical_research\\data\\raw",
+  "scope": "answer_question_only",
+  "file_count": 2,
+  "id_presence": {
+    "question_id": [
+      "data/raw/answer.parquet",
+      "data/raw/question.parquet"
+    ]
+  },
+  "missing_id_fields": [],
+  "id_float_fields": [],
+  "nested_fields": [],
+  "text_json_candidates": [],
+  "field_type_conflicts": [],
+  "question_answer_mix_signals": [
+    {
+      "file": "data/raw/answer.parquet",
+      "field": "answer",
+      "question_mark_ratio": 0.045
+    },
+    {
+      "file": "data/raw/question.parquet",
+      "field": "question_desc",
+      "question_mark_ratio": 0.51
+    }
+  ],
+  "time_confusion_candidates": [
+    {
+      "relative_path": "data/raw/answer.parquet",
+      "has_create_time": true,
+      "has_release_time": false,
+      "note": "single_time_field_check_business_definition"
+    },
+    {
+      "relative_path": "data/raw/question.parquet",
+      "has_create_time": true,
+      "has_release_time": false,
+      "note": "single_time_field_check_business_definition"
+    }
+  ],
+  "files": [
+    {
+      "file_name": "answer.parquet",
+      "relative_path": "data/raw/answer.parquet",
+      "row_count": 2837042,
+      "row_group_count": 3,
+      "has_create_time": true,
+      "has_release_time": false,
+      "columns": [
+        {
+          "name": "question_id",
+          "type": "int64",
+          "is_id": true,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\u4f8b\uff1a100002518649569281\uff0c\u6807\u5b9a\u6bcf\u6761\u95ee\u9898\u7684\u552f\u4e00\u5b57\u6bb5\uff1bquestion\u7684\u4e3b\u952e\uff0canswer\u7684\u5916\u952e",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        },
+        {
+          "name": "user_id",
+          "type": "large_string",
+          "is_id": true,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u56de\u7b54\u533b\u751f\u7684\u5e73\u53f0\u8d26\u53f7id\uff0c\u552f\u4e00\u6807\u5b9a\u6bcf\u4f4d\u533b\u751f",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "tech_title",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u4f8b\uff1a\u4e3b\u6cbb\u533b\u5e08\uff0c\u6bcf\u4f4d\u533b\u751f\u7684\u804c\u79f0",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "dept",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u4f8b\uff1a\u6d88\u5316\u5185\u79d1\uff0c\u6bcf\u4f4d\u533b\u751f\u6240\u5c5e\u7684\u9886\u57df",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "hospital",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u6bcf\u4f4d\u533b\u751f\u7684\u6240\u5c5e\u533b\u9662/\u5355\u4f4d",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "answer",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u5177\u4f53\u4f5c\u7b54\u7684\u6587\u672c\u5185\u5bb9",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.045,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "create_time",
+          "type": "timestamp[us]",
+          "is_id": false,
+          "is_time_candidate": true,
+          "time_representation": "timestamp_type",
+          "explaination": "\u56de\u590d/\u63d0\u95ee\u53d1\u5e03\u7684\u5177\u4f53\u65f6\u95f4",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "timestamp[us]"
+        },
+        {
+          "name": "thumb",
+          "type": "int64",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\u6bcf\u6761\u56de\u7b54\u83b7\u5f97\u7684\u70b9\u8d5e\u6570",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        },
+        {
+          "name": "help_status",
+          "type": "int64",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\uff1f",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        },
+        {
+          "name": "seq",
+          "type": "int64",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\uff1f",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        }
+      ]
+    },
+    {
+      "file_name": "question.parquet",
+      "relative_path": "data/raw/question.parquet",
+      "row_count": 278346,
+      "row_group_count": 1,
+      "has_create_time": true,
+      "has_release_time": false,
+      "columns": [
+        {
+          "name": "question_id",
+          "type": "int64",
+          "is_id": true,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\u4f8b\uff1a100002518649569281\uff0c\u6807\u5b9a\u6bcf\u6761\u95ee\u9898\u7684\u552f\u4e00\u5b57\u6bb5\uff1bquestion\u7684\u4e3b\u952e\uff0canswer\u7684\u5916\u952e",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        },
+        {
+          "name": "gender",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u7537/\u5973\uff0c\u5b58\u5728NULL\u503c",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "age",
+          "type": "int64",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\u5b58\u5728NULL\u503c",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        },
+        {
+          "name": "address",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u7701/\u5e02 \u7ea7\uff0c\u76f4\u8f96\u5e02\u5219\u7cbe\u786e\u5230\u5e02",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "question_desc",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u5b57\u7b26\u4e32\uff0c\u5177\u4f53\u95ee\u9898\u7684\u63cf\u8ff0\uff0c\u5448\u73b0\u53e3\u8bed\u5316\u7279\u5f81\uff0c\u6807\u70b9\u7b26\u53f7\u95ee\u53f7\u5c45\u591a\uff0c\u7b26\u5408\u95ee\u9898\u7684\u7279\u5f81",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.51,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "tags",
+          "type": "large_string",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "string",
+          "explaination": "\u4f8b\uff1a\u4eb2\u5b50\u80b2\u513f\u3001\u54b3\u55fd\u3001\u611f\u5192\u7b49\uff0c\u4e3a\u5177\u4f53\u75c7\u72b6/\u75be\u75c5\u7684\u6807\u7b7e",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "large_string"
+        },
+        {
+          "name": "create_time",
+          "type": "timestamp[us]",
+          "is_id": false,
+          "is_time_candidate": true,
+          "time_representation": "timestamp_type",
+          "explaination": "\u56de\u590d/\u63d0\u95ee\u53d1\u5e03\u7684\u5177\u4f53\u65f6\u95f4",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "timestamp[us]"
+        },
+        {
+          "name": "bounty",
+          "type": "double",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "double",
+          "explaination": "\uff1f",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "double"
+        },
+        {
+          "name": "views",
+          "type": "int64",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\uff1f",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        },
+        {
+          "name": "ans_count",
+          "type": "int64",
+          "is_id": false,
+          "is_time_candidate": false,
+          "time_representation": "int_non_timestamp_or_low_precision",
+          "explaination": "\u672c\u6761\u95ee\u9898\u4e0b\u56de\u7b54\u7684\u6570\u91cf",
+          "json_like_ratio": 0.0,
+          "question_mark_ratio": 0.0,
+          "recommended_target_type": "int64"
+        }
+      ]
+    }
+  ]
+}

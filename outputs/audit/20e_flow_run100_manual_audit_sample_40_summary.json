@@ -1,0 +1,143 @@
+{
+  "run_ts_utc": "2026-10-07T09:09:48+00:00",
+  "input_metric_path": "D:\\medical_research\\data\\analysis\\flow_run100_knowledge_metrics_bge.parquet",
+  "input_answer_path": "D:\\medical_research\\data\\analysis\\flow_run100_answer_text_features.parquet",
+  "output_csv_path": "D:\\medical_research\\outputs\\tables\\20e_flow_run100_manual_audit_sample_40.csv",
+  "target_sample_size": 40,
+  "actual_sample_size": 40,
+  "prior_group_counts": {
+    "1": 7,
+    "10-19": 6,
+    "2": 6,
+    "20-24": 6,
+    "3-4": 7,
+    "5-9": 8
+  },
+  "selection_tag_counts": {
+    "centroid_low": 2,
+    "nearest_low": 3,
+    "sentence_low": 3,
+    "centroid_mid": 2,
+    "centroid_high": 2,
+    "nearest_high": 4,
+    "sentence_high": 6,
+    "nearest_mid": 2,
+    "sentence_mid": 2,
+    "largest_metric_disagreement": 11,
+    "group_cover_10-19": 2,
+    "group_cover_20-24": 4,
+    "fill_balance": 7
+  },
+  "preview": [
+    {
+      "question_id": "134606695193231361",
+      "event_id": "134606695193231361|APLau123221841|2",
+      "prior_group": "1",
+      "peer_crowding_prior_answer_count": 1,
+      "knowledge_differentiation_bge_centroid": 0.1879156231880188,
+      "knowledge_differentiation_bge_nearest_prior": 0.1879156231880188,
+      "knowledge_differentiation_bge_sentence_mean": 0.27654120326042175,
+      "metric_spread": 0.08862558007240295,
+      "selection_tags": "nearest_mid"
+    },
+    {
+      "question_id": "170173641642885120",
+      "event_id": "170173641642885120|zzDcJ112682756|2",
+      "prior_group": "1",
+      "peer_crowding_prior_answer_count": 1,
+      "knowledge_differentiation_bge_centroid": 0.5290395617485046,
+      "knowledge_differentiation_bge_nearest_prior": 0.5290395021438599,
+      "knowledge_differentiation_bge_sentence_mean": 0.5293494462966919,
+      "metric_spread": 0.00030994415283203125,
+      "selection_tags": "nearest_high; sentence_high"
+    },
+    {
+      "question_id": "182975135765086209",
+      "event_id": "182975135765086209|hRzIh115419244|2",
+      "prior_group": "1",
+      "peer_crowding_prior_answer_count": 1,
+      "knowledge_differentiation_bge_centroid": 0.19414633512496948,
+      "knowledge_differentiation_bge_nearest_prior": 0.19414633512496948,
+      "knowledge_differentiation_bge_sentence_mean": 0.4312945306301117,
+      "metric_spread": 0.2371481955051422,
+      "selection_tags": "fill_balance"
+    },
+    {
+      "question_id": "20221385106325507",
+      "event_id": "20221385106325507|EKojG75192615|2",
+      "prior_group": "1",
+      "peer_crowding_prior_answer_count": 1,
+      "knowledge_differentiation_bge_centroid": 0.5333752632141113,
+      "knowledge_differentiation_bge_nearest_prior": 0.5333752632141113,
+      "knowledge_differentiation_bge_sentence_mean": 0.5182782411575317,
+      "metric_spread": 0.01509702205657959,
+      "selection_tags": "centroid_high; nearest_high; sentence_high"
+    },
+    {
+      "question_id": "205430455342874626",
+      "event_id": "205430455342874626|DVaFV21852526|2",
+      "prior_group": "1",
+      "peer_crowding_prior_answer_count": 1,
+      "knowledge_differentiation_bge_centroid": 0.18392956256866455,
+      "knowledge_differentiation_bge_nearest_prior": 0.18392956256866455,
+      "knowledge_differentiation_bge_sentence_mean": 0.23154601454734802,
+      "metric_spread": 0.04761645197868347,
+      "selection_tags": "sentence_mid"
+    },
+    {
+      "question_id": "27503288926666753",
+      "event_id": "27503288926666753|IVQFW79476012|2",
+      "prior_group": "1",
+      "peer_crowding_prior_answer_count": 1,
+      "knowledge_differentiation_bge_centroid": 0.15579736232757568,
+      "knowledge_differentiation_bge_nearest_prior": 0.15579724311828613,
+      "knowledge_differentiation_bge_sentence_mean": 0.479920893907547,
+      "metric_spread": 0.32412365078926086,
+      "selection_tags": "sentence_high; largest_metric_disagreement"
+    },
+    {
+      "question_id": "92035867201306626",
+      "event_id": "92035867201306626|CcCrZ70912782|2",
+      "prior_group": "1",
+      "peer_crowding_prior_answer_count": 1,
+      "knowledge_differentiation_bge_centroid": 0.5673702955245972,
+      "knowledge_differentiation_bge_nearest_prior": 0.5673702955245972,
+      "knowledge_differentiation_bge_sentence_mean": 0.5276233553886414,
+      "metric_spread": 0.03974694013595581,
+      "selection_tags": "centroid_high; nearest_high; sentence_high"
+    },
+    {
+      "question_id": "130577482368745474",
+      "event_id": "130577482368745474|PVTSo116427032|11",
+      "prior_group": "10-19",
+      "peer_crowding_prior_answer_count": 10,
+      "knowledge_differentiation_bge_centroid": 0.19704526662826538,
+      "knowledge_differentiation_bge_nearest_prior": 0.1879715919494629,
+      "knowledge_differentiation_bge_sentence_mean": 0.2622584402561188,
+      "metric_spread": 0.07428684830665588,
+      "selection_tags": "nearest_mid"
+    },
+    {
+      "question_id": "128464581115838465",
+      "event_id": "128464581115838465|DVaFV21852526|12",
+      "prior_group": "10-19",
+      "peer_crowding_prior_answer_count": 11,
+      "knowledge_differentiation_bge_centroid": 0.16390526294708252,
+      "knowledge_differentiation_bge_nearest_prior": 0.18036848306655884,
+      "knowledge_differentiation_bge_sentence_mean": 0.362501323223114,
+      "metric_spread": 0.1985960602760315,
+      "selection_tags": "group_cover_10-19"
+    },
+    {
+      "question_id": "147910",
+      "event_id": "147910|kZLcq58086838|16",
+      "prior_group": "10-19",
+      "peer_crowding_prior_answer_count": 12,
+      "knowledge_differentiation_bge_centroid": 0.11808687448501587,
+      "knowledge_differentiation_bge_nearest_prior": 0.06165492534637451,
+      "knowledge_differentiation_bge_sentence_mean": 0.2530748248100281,
+      "metric_spread": 0.19141989946365356,
+      "selection_tags": "fill_balance"
+    }
+  ]
+}

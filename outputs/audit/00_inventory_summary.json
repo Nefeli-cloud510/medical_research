@@ -1,0 +1,48 @@
+{
+  "run_ts_utc": "2026-09-21T17:52:39+00:00",
+  "root_dir": "D:\\medical_research",
+  "raw_dir": "D:\\medical_research\\data\\raw",
+  "manifest_path": "D:\\medical_research\\metadata\\file_manifest.csv",
+  "scope": "answer_question_only",
+  "parquet_file_count": 2,
+  "readable_file_count": 2,
+  "unreadable_file_count": 0,
+  "distinct_schema_count": 2,
+  "all_schemas_consistent": false,
+  "duplicate_sha256_groups": [],
+  "partition_hint": "entity_split_by_subject",
+  "files": [
+    {
+      "file_name": "answer.parquet",
+      "relative_path": "data/raw/answer.parquet",
+      "size_mb": 442.648,
+      "rows": 2837042,
+      "row_groups": 3,
+      "column_count": 10,
+      "columns": "question_id|user_id|tech_title|dept|hospital|answer|create_time|thumb|help_status|seq",
+      "time_column": "create_time",
+      "min_time": "2017-08-30T22:30:15",
+      "max_time": "2021-10-07T16:52:00",
+      "sha256": "3b16f1f9fdc747155d72b43a5413fc5ec0e718cb3b5da82988ba86915db0bd93",
+      "schema_signature": "question_id:int64|user_id:large_string|tech_title:large_string|dept:large_string|hospital:large_string|answer:large_string|create_time:timestamp[us]|thumb:int64|help_status:int64|seq:int64",
+      "readable": true,
+      "error_message": ""
+    },
+    {
+      "file_name": "question.parquet",
+      "relative_path": "data/raw/question.parquet",
+      "size_mb": 57.918,
+      "rows": 278346,
+      "row_groups": 1,
+      "column_count": 10,
+      "columns": "question_id|gender|age|address|question_desc|tags|create_time|bounty|views|ans_count",
+      "time_column": "create_time",
+      "min_time": "2017-08-30T18:09:20",
+      "max_time": "2021-10-07T16:40:54",
+      "sha256": "991651d239b8c68c762a4ff07d3622ddadbc498bd1119fc9118c6677d5d502dc",
+      "schema_signature": "question_id:int64|gender:large_string|age:int64|address:large_string|question_desc:large_string|tags:large_string|create_time:timestamp[us]|bounty:double|views:int64|ans_count:int64",
+      "readable": true,
+      "error_message": ""
+    }
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "run_ts_utc": "2026-10-15T11:36:10+00:00",
+  "scope": "flow_run100_sentence_level_bertopic_distribution",
+  "inputs": {
+    "answer_path": "D:\\medical_research\\data\\analysis\\flow_run100_answer_text_for_topic_clean.csv",
+    "sentence_path": "D:\\medical_research\\data\\analysis\\flow_run100_sentence_text_for_topic_clean.csv"
+  },
+  "outputs": {
+    "answer_topic_output_path": "D:\\medical_research\\data\\analysis\\flow_run100_answer_sentence_topic_distribution_k20.csv",
+    "sentence_topic_output_path": "D:\\medical_research\\data\\analysis\\flow_run100_sentence_topic_labels_k20.csv",
+    "topic_info_path": "D:\\medical_research\\outputs\\tables\\20i_flow_run100_sentence_bertopic_topic_info_k20.csv",
+    "topic_keywords_path": "D:\\medical_research\\outputs\\tables\\20i_flow_run100_sentence_bertopic_topic_keywords_k20.csv"
+  },
+  "algorithm": {
+    "topic_model": "BERTopic",
+    "embedding_model": "BAAI/bge-base-zh-v1.5",
+    "embedding_model_source_used": "D:\\medical_research\\models\\bge-base-zh-v1.5",
+    "device_used": "cpu",
+    "cluster_backend": "hdbscan",
+    "document_unit_for_training": "句子级 sentence_text_topic_clean",
+    "answer_distribution_unit": "回答内句子主题计数 / 有效主题句数",
+    "fixed_topic_k_requested": 20,
+    "requested_nr_topics_including_noise": 20,
+    "actual_valid_topic_k": 19,
+    "topic_reduction_applied": true,
+    "topic_reduction_strategy": "reduce_topics -> 20",
+    "umap_n_neighbors": 15,
+    "umap_n_components": 5,
+    "hdbscan_min_cluster_size": 20,
+    "hdbscan_min_samples": 10,
+    "noise_rule": "HDBSCAN 的 -1 视为噪声句，不作为可解释主题；若整条回答没有有效主题，则主题分布记缺失。",
+    "saved_flags": [
+      "topic_coverage",
+      "noise_sentence_share",
+      "has_valid_topic"
+    ],
+    "approximate_distribution_used": false
+  },
+  "counts": {
+    "answer_rows": 859,
+    "sentence_rows": 2355,
+    "answers_with_valid_topic": 810,
+    "answers_without_valid_topic": 49,
+    "global_valid_topic_count_before_reduction": 34,
+    "global_valid_topic_count_after_reduction": 19,
+    "global_noise_sentence_count": 318
+  },
+  "distribution_summary": {
+    "topic_coverage_mean": 1.430733410942957,
+    "topic_coverage_max": 6,
+    "noise_sentence_share_mean": 0.12466080498590941
+  },
+  "topic_info_preview": [
+    {
+      "Topic": -1,
+      "Count": 318,
+      "Name": "噪声主题",
+      "Representation": [
+        "TCT",
+        "DNA",
+        "IGE",
+        "HCG",
+        "PET",
+        "CT",
+        "CT CT"
+      ],
+      "Representative_Docs": [
+        "强调，无创dna是筛查，只是检出率比较高，不是诊断，有一定风险。",
+        "其它类型如果tct正常，需加强锻炼后复查，持续一年感染需用药。",
+        "要结合tct检查。"
+      ],
+      "Keywords_zh": "TCT、DNA、IGE、HCG、PET、CT、CT CT",
+      "Representative_Docs_zh": "强调，无创dna是筛查，只是检出率比较高，不是诊断，有一定风险。\n---\n其它类型如果tct正常，需加强锻炼后复查，持续一年感染需用药。\n---\n要结合tct检查。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 0,
+      "Count": 481,
+      "Name": "PET、PRP、3C1、MR",
+      "Representation": [
+        "PET",
+        "PRP",
+        "3C1",
+        "MR",
+        "MRI",
+        "5cm",
+        "CT"
+      ],
+      "Representative_Docs": [
+        "有些报道可以试行玻璃酸钠或者PRP治疗。",
+        "从PET检查结果来看，没有远处转移，还不能算晚期。",
+        "建议针对pet-CT提示的病变处，局部进行放射治疗。"
+      ],
+      "Keywords_zh": "PET、PRP、3C1、MR、MRI、5cm、CT",
+      "Representative_Docs_zh": "有些报道可以试行玻璃酸钠或者PRP治疗。\n---\n从PET检查结果来看，没有远处转移，还不能算晚期。\n---\n建议针对pet-CT提示的病变处，局部进行放射治疗。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 1,
+      "Count": 316,
+      "Name": "PRP、MR、CT",
+      "Representation": [
+        "PRP",
+        "MR",
+        "CT"
+      ],
+      "Representative_Docs": [
+        "建议查肝肾功能，心功能，全腹CT，下肢血管彩超等明确水肿原因后再决定下一步治疗。",
+        "有时候结石比较小彩超检查不出来建议最好在做一个肾功能检查和泌尿系统ct检查。",
+        "临床表现和MR提示：髌骨软骨有损伤。"
+      ],
+      "Keywords_zh": "PRP、MR、CT",
+      "Representative_Docs_zh": "建议查肝肾功能，心功能，全腹CT，下肢血管彩超等明确水肿原因后再决定下一步治疗。\n---\n有时候结石比较小彩超检查不出来建议最好在做一个肾功能检查和泌尿系统ct检查。\n---\n临床表现和MR提示：髌骨软骨有损伤。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 2,
+      "Count": 245,
+      "Name": "主题2",
+      "Representation": [],
+      "Representative_Docs": [
+        "依据面部改善情况，可减少或停用维生素A软胶囊。",
+        "如手凉，可用艾叶100克，红花20克温水泡手。",
+        "你的这种情况很可能是淋巴水肿，如果是淋巴水肿就要寻找原因。"
+      ],
+      "Keywords_zh": "",
+      "Representative_Docs_zh": "依据面部改善情况，可减少或停用维生素A软胶囊。\n---\n如手凉，可用艾叶100克，红花20克温水泡手。\n---\n你的这种情况很可能是淋巴水肿，如果是淋巴水肿就要寻找原因。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 3,
+      "Count": 231,
+      "Name": "CT",
+      "Representation": [
+        "CT"
+      ],
+      "Representative_Docs": [
+        "不知腹部CT有没有做增强和血管成像（CTA），术后腹痛，要排外血栓形成的原因，建议到三甲医院消化内科、血管外科看看。",
+        "建议做上腹部CT，明确胃小弯出异常！",
+        "如果胃镜没有在胃小弯处发现病变，这个胃外侧的软组织影多考虑淋巴结，需要定期复查CT，及时了解软组织变化情况，以便确定治疗方式。"
+      ],
+      "Keywords_zh": "CT",
+      "Representative_Docs_zh": "不知腹部CT有没有做增强和血管成像（CTA），术后腹痛，要排外血栓形成的原因，建议到三甲医院消化内科、血管外科看看。\n---\n建议做上腹部CT，明确胃小弯出异常！\n---\n如果胃镜没有在胃小弯处发现病变，这个胃外侧的软组织影多考虑淋巴结，需要定期复查CT，及时了解软组织变化情况，以便确定治疗方式。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 4,
+      "Count": 102,
+      "Name": "MRI、CT CT、CT",
+      "Representation": [
+        "MRI",
+        "CT CT",
+        "CT"
+      ],
+      "Representative_Docs": [
+        "患者中年男性，急性起病，大小便失禁，右侧肢体无力，cT提示左侧大面积病灶。",
+        "你好，这个您需要上传头颅CT及其他检查单。",
+        "你好，估计是脑膜瘤，在这个地方好发，建议完善增强MRI检查。"
+      ],
+      "Keywords_zh": "MRI、CT CT、CT",
+      "Representative_Docs_zh": "患者中年男性，急性起病，大小便失禁，右侧肢体无力，cT提示左侧大面积病灶。\n---\n你好，这个您需要上传头颅CT及其他检查单。\n---\n你好，估计是脑膜瘤，在这个地方好发，建议完善增强MRI检查。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 5,
+      "Count": 94,
+      "Name": "HCG",
+      "Representation": [
+        "HCG"
+      ],
+      "Representative_Docs": [
+        "月经推迟和这个药应该没有什么关系，你需要检查一下HCG看看怎么样？",
+        "月经推迟，首先要排除妊娠，但是根据您所说的这个时间还是考虑停药后的一个排卵功能障碍引起的月经延迟，但是由于排卵不规律，也有可能排卵延迟，在您同房之后怀孕，所以再过十天，如果没有月经来潮，可以查一个血HCG除外妊娠，如果没有怀孕的话，也可以用激素继续调节一下",
+        "月经的推迟于之前的达芙通关系不大，所以查一下尿HcG排除一下怀孕，可以做一下阴超看一下子宫内膜的厚度，另外，偶尔一次的月经推迟关系不大，不用太过紧张，必要时可以用孕激素进行避孕催经治疗，如果有妊娠计划，可以继续应用达芙通"
+      ],
+      "Keywords_zh": "HCG",
+      "Representative_Docs_zh": "月经推迟和这个药应该没有什么关系，你需要检查一下HCG看看怎么样？\n---\n月经推迟，首先要排除妊娠，但是根据您所说的这个时间还是考虑停药后的一个排卵功能障碍引起的月经延迟，但是由于排卵不规律，也有可能排卵延迟，在您同房之后怀孕，所以再过十天，如果没有月经来潮，可以查一个血HCG除外妊娠，如果没有怀孕的话，也可以用激素继续调节一下\n---\n月经的推迟于之前的达芙通关系不大，所以查一下尿HcG排除一下怀孕，可以做一下阴超看一下子宫内膜的厚度，另外，偶尔一次的月经推迟关系不大，不用太过紧张，必要时可以用孕激素进行避孕催经治疗，如果有妊娠计划，可以继续应用达芙通",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 6,
+      "Count": 92,
+      "Name": "IGE、CT CT、CT",
+      "Representation": [
+        "IGE",
+        "CT CT",
+        "CT"
+      ],
+      "Representative_Docs": [
+        "孩子用IgE高，时有清嗓子，时有咳嗽，不排除过敏性的原因。",
+        "考虑像是过敏性咳嗽，总IgE增高。",
+        "孩子喉中有痰2月，夜间有咳嗽，检查总IgE增高，过敏原检测、鼻窦CT、肺炎支原体抗体等检查无异常。"
+      ],
+      "Keywords_zh": "IGE、CT CT、CT",
+      "Representative_Docs_zh": "孩子用IgE高，时有清嗓子，时有咳嗽，不排除过敏性的原因。\n---\n考虑像是过敏性咳嗽，总IgE增高。\n---\n孩子喉中有痰2月，夜间有咳嗽，检查总IgE增高，过敏原检测、鼻窦CT、肺炎支原体抗体等检查无异常。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 7,
+      "Count": 83,
+      "Name": "DNA",
+      "Representation": [
+        "DNA"
+      ],
+      "Representative_Docs": [
+        "建议夫妻双方做DNA检测，孕前检查看看有没有遗传性基因。",
+        "你好，根据你说的情况，目前没有关系的，对胎儿没有太大影响，如果你不放心，可以查无创DNA，",
+        "可以在12周左右做一个nt、早期唐氏筛查和无创DNA的检测，如果这三项检查都是正常的，我觉得问题不是很大。"
+      ],
+      "Keywords_zh": "DNA",
+      "Representative_Docs_zh": "建议夫妻双方做DNA检测，孕前检查看看有没有遗传性基因。\n---\n你好，根据你说的情况，目前没有关系的，对胎儿没有太大影响，如果你不放心，可以查无创DNA，\n---\n可以在12周左右做一个nt、早期唐氏筛查和无创DNA的检测，如果这三项检查都是正常的，我觉得问题不是很大。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 8,
+      "Count": 57,
+      "Name": "PET、3C1、TCT、CT",
+      "Representation": [
+        "PET",
+        "3C1",
+        "TCT",
+        "CT"
+      ],
+      "Representative_Docs": [
+        "宫颈癌3C1期（晚期） 5年生存率30一40％ 治疗费用各个医院不同同步放化疗，配合中医中药治疗",
+        "根据体检巨块型宫颈癌 并累及阴道壁下三分之一 Pet提示淋巴转移可能 诊断考虑3期 晚期宫颈癌 首先选择同步放化疗",
+        "根据病理报告和复旦肿瘤医院的pet结果，患者诊断为宫颈癌晚期，根据大夫查体结果的描述，应该是没法手术了，应该是选择同步放化疗，效果应该不错同步放化疗，然后定期复查"
+      ],
+      "Keywords_zh": "PET、3C1、TCT、CT",
+      "Representative_Docs_zh": "宫颈癌3C1期（晚期） 5年生存率30一40％ 治疗费用各个医院不同同步放化疗，配合中医中药治疗\n---\n根据体检巨块型宫颈癌 并累及阴道壁下三分之一 Pet提示淋巴转移可能 诊断考虑3期 晚期宫颈癌 首先选择同步放化疗\n---\n根据病理报告和复旦肿瘤医院的pet结果，患者诊断为宫颈癌晚期，根据大夫查体结果的描述，应该是没法手术了，应该是选择同步放化疗，效果应该不错同步放化疗，然后定期复查",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 9,
+      "Count": 52,
+      "Name": "主题9",
+      "Representation": [],
+      "Representative_Docs": [
+        "希望为您的采纳带来帮助，祝您早日康复！",
+        "祝您健康好运！",
+        "祝身体健康！"
+      ],
+      "Keywords_zh": "",
+      "Representative_Docs_zh": "希望为您的采纳带来帮助，祝您早日康复！\n---\n祝您健康好运！\n---\n祝身体健康！",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 10,
+      "Count": 52,
+      "Name": "主题10",
+      "Representation": [],
+      "Representative_Docs": [
+        "根据您描述的情况，给您如下意见供参考！",
+        "根据您描述的情况，给您如下意见供参考！",
+        "希望我的建议对您有所帮助谢谢！"
+      ],
+      "Keywords_zh": "",
+      "Representative_Docs_zh": "根据您描述的情况，给您如下意见供参考！\n---\n根据您描述的情况，给您如下意见供参考！\n---\n希望我的建议对您有所帮助谢谢！",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 11,
+      "Count": 48,
+      "Name": "5cm",
+      "Representation": [
+        "5cm"
+      ],
+      "Representative_Docs": [
+        "平时不用有任何思想负担，因为多数人的血管瘤基本上没有什么变化。",
+        "血管瘤有一定自限性，可以通过药物治疗，就是普奈洛尔，年龄，体积大小和外观不是手术的指证，血管瘤产生的并发症才是手术的目的，根据现有病例资料，小孩子尚未产生并发症，可以保守治疗。",
+        "5cm)，属于小血管瘤（良性病变）。"
+      ],
+      "Keywords_zh": "5cm",
+      "Representative_Docs_zh": "平时不用有任何思想负担，因为多数人的血管瘤基本上没有什么变化。\n---\n血管瘤有一定自限性，可以通过药物治疗，就是普奈洛尔，年龄，体积大小和外观不是手术的指证，血管瘤产生的并发症才是手术的目的，根据现有病例资料，小孩子尚未产生并发症，可以保守治疗。\n---\n5cm)，属于小血管瘤（良性病变）。",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 12,
+      "Count": 40,
+      "Name": "主题12",
+      "Representation": [],
+      "Representative_Docs": [
+        "男孩，10岁，身高生长缓慢。",
+        "孩子的性激素结果提示孩子已经启动中枢性性发育，孩子的睾丸也大于4毫升，因为孩子10岁，如果是9岁以前出现这种情况就是性早熟，目前只能诊断青春早发育，目前的骨龄预测身高确实是172厘米，没有达到他的遗传身高，但是医学上这个高度是可以不干预的，但是你想孩子高，可以用生长激素，有可能出现副作用，",
+        "还有一个，因为孩子的身高，体重都低于正常平均年龄，脚多，要注意矮小症，也要注意激素水平方面的问题，建议看一下小儿内分泌专科门诊和小儿消化专科门诊"
+      ],
+      "Keywords_zh": "",
+      "Representative_Docs_zh": "男孩，10岁，身高生长缓慢。\n---\n孩子的性激素结果提示孩子已经启动中枢性性发育，孩子的睾丸也大于4毫升，因为孩子10岁，如果是9岁以前出现这种情况就是性早熟，目前只能诊断青春早发育，目前的骨龄预测身高确实是172厘米，没有达到他的遗传身高，但是医学上这个高度是可以不干预的，但是你想孩子高，可以用生长激素，有可能出现副作用，\n---\n还有一个，因为孩子的身高，体重都低于正常平均年龄，脚多，要注意矮小症，也要注意激素水平方面的问题，建议看一下小儿内分泌专科门诊和小儿消化专科门诊",
+      "Representative_Docs_Count": 3
+    },
+    {
+      "Topic": 13,
+      "Count": 27,
+      "Name": "CT",
+      "Representation": [
+        "CT"
+      ],
+      "Representative_Docs": [
+        "很多人的中耳炎是从小就开始反复流脓的，要是有个耳内镜检查就好了，外耳道肿物导致鼓膜暴露不全，肿物内抽出了血性分泌物并且做了活检，活检结果是好的，一般炎症控制后2周才可以做中耳炎手术。",
+        "你这个情况考虑是腰椎间盘外耳道感染肉芽增生 乳突炎，建议你去医院手术清理肉芽，抗生素治疗就好了",
+        "根据你提供的照片资料，左耳缺少外耳道，左耳听力损失程度可能在中重度，听力能不能完全达到正常，一是要看左耳耳蜗功能是否正常(纯音测听)，二是要看左耳外耳及中耳的畸形程度（颞骨CT）。"
+      ],
+      "Keywords_zh": "CT",
+      "Representative_Docs_zh": "很多人的中耳炎是从小就开始反复流脓的，要是有个耳内镜检查就好了，外耳道肿物导致鼓膜暴露不全，肿物内抽出了血性分泌物并且做了活检，活检结果是好的，一般炎症控制后2周才可以做中耳炎手术。\n---\n你这个情况考虑是腰椎间盘外耳道感染肉芽增生 乳突炎，建议你去医院手术清理肉芽，抗生素治疗就好了\n---\n根据你提供的照片资料，左耳缺少外耳道，左耳听力损失程度可能在中重度，听力能不能完全达到正常，一是要看左耳耳蜗功能是否正常(纯音测听)，二是要看左耳外耳及中耳的畸形程度（颞骨CT）。",
+      "Representative_Docs_Count": 3
+    }
+  ],
+  "answer_preview": [
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|EZtaQ99499888|1",
+      "user_id": "EZtaQ99499888",
+      "time_seq": 1,
+      "seq": 1,
+      "answer_create_time": "2019-11-25 10:45:16",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "和之前用药没有关系。怀孕后出血考虑是先兆流产。可以保胎到8周。8周后胎盘形成会分泌孕酮。",
+      "total_sentence_count": 4,
+      "valid_topic_sentence_count": 4,
+      "noise_sentence_count": 0,
+      "noise_sentence_share": 0.0,
+      "has_valid_topic": true,
+      "topic_coverage": 2,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.25, \"6\": 0.0, \"7\": 0.75, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 7.0,
+      "dominant_topic_share": 0.75,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|MEdJZ73165655|2",
+      "user_id": "MEdJZ73165655",
+      "time_seq": 2,
+      "seq": 2,
+      "answer_create_time": "2019-11-25 10:46:01",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "您好，早孕期阴道出血的原因很难说清楚，一般来说您这个时间段吃的替硝唑对胎儿不会有影响，如果有影响会导致流产，保胎是保不住的。所以别紧张了，只要不再阴道出血和腹痛，定期复查就可以了，祝您健康好孕！",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 1.0, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 7.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|mXkyu23349543|3",
+      "user_id": "mXkyu23349543",
+      "time_seq": 3,
+      "seq": 3,
+      "answer_create_time": "2019-11-25 10:51:58",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "你好！早孕33天内的用药是全或者无的理论，也就是说如果有影响就会发生流产，不发生产就视为没有影响，你是在35天之前用药，现在有胎芽和胎心搏动，之前的流血考虑是先兆流产，只要没有发生完全流产的情况，建议保留。可以服用保胎药物保胎治疗，做好后面每一步的检查。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 2,
+      "noise_sentence_count": 0,
+      "noise_sentence_share": 0.0,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 1.0, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 7.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|AXCxa44713121|4",
+      "user_id": "AXCxa44713121",
+      "time_seq": 4,
+      "seq": 4,
+      "answer_create_time": "2019-11-25 10:52:02",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "这种情况还是考虑到体内的黄体，功能不足，子宫的敏感性增加引起的出血，应该跟吃药没有太大的影响。因为那么小的小的，如果吃药对孩子影响，那么是致命的，这个孩子就不会存活，反之，如果成活就说明对孩子没有影响。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 2,
+      "noise_sentence_count": 0,
+      "noise_sentence_share": 0.0,
+      "has_valid_topic": true,
+      "topic_coverage": 2,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.5, \"6\": 0.0, \"7\": 0.5, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 5.0,
+      "dominant_topic_share": 0.5,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|FQzNd90859000|5",
+      "user_id": "FQzNd90859000",
+      "time_seq": 5,
+      "seq": 5,
+      "answer_create_time": "2019-11-25 10:54:33",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "出血可能是孕激素水平底下，和替硝唑关系不大。建议继续口服黄体酮家，密切观察出血情况。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 1.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 5.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|odYIu60328268|6",
+      "user_id": "odYIu60328268",
+      "time_seq": 6,
+      "seq": 6,
+      "answer_create_time": "2019-11-25 10:56:42",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "您好，很高兴为您解答，中间出血与替硝唑没什么关系，在八至十周孕激素分泌来源从妊娠黄体向胎盘过度时期会有孕酮波动出现少量出血。目前建议继续口服100mg2/日治疗一周。祝您生活愉快！",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 1.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 0.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|kYgtM89395438|7",
+      "user_id": "kYgtM89395438",
+      "time_seq": 7,
+      "seq": 7,
+      "answer_create_time": "2019-11-25 11:11:17",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "您好，目前针对您的情况。由于您的服药时间在停经一个月之内，所以药物对孩子的影响是“全或无”的概念。也就是说，如果孩子受到了药物影响，孩子会出现胚胎停育和（或）流产等不良妊娠结局。而如果孩子正常发育，就可以认为这些用药是对孩子没有造成影响的。您的出血可能是有一点流产先兆，目前已经没有出血或腹痛就不要紧。不用太担心，后期有情况密切观察。祝您生活愉快！",
+      "total_sentence_count": 6,
+      "valid_topic_sentence_count": 5,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.16666666666666666,
+      "has_valid_topic": true,
+      "topic_coverage": 3,
+      "topic_distribution_json": "{\"0\": 0.2, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.2, \"6\": 0.0, \"7\": 0.6, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 7.0,
+      "dominant_topic_share": 0.6,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|SjBTb102277246|8",
+      "user_id": "SjBTb102277246",
+      "time_seq": 8,
+      "seq": 8,
+      "answer_create_time": "2019-11-25 11:13:29",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "你好，怀孕前30天用的药物对胚胎的影响是全或无。你现在怀孕已经两个月，胎芽胎心正常，应该和所用的替硝唑没有关系，可以不用保胎顺其自然。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 1.0, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 7.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|OdiKw111206375|9",
+      "user_id": "OdiKw111206375",
+      "time_seq": 9,
+      "seq": 9,
+      "answer_create_time": "2019-11-25 11:32:38",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "早期怀孕后出血原因有很多，劳累、孕酮低、孩子自身发育缺陷、外界影响、母亲有全身性疾病等都可能会引起孩子流产现在无出血，超声无异常，化验看一下孕酮值和血hcg值，如果没有问题就好好保胎，以休息为主",
+      "total_sentence_count": 1,
+      "valid_topic_sentence_count": 0,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 1.0,
+      "has_valid_topic": false,
+      "topic_coverage": 0,
+      "topic_distribution_json": NaN,
+      "dominant_topic_id": NaN,
+      "dominant_topic_share": NaN,
+      "fixed_topic_k": 20
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|qhvsw85439898|10",
+      "user_id": "qhvsw85439898",
+      "time_seq": 10,
+      "seq": 10,
+      "answer_create_time": "2019-11-25 11:55:56",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "早孕先兆流产，阴道出血可以是激素不稳定导致的，少数和宫颈糜烂或息肉导致。和无关。可保胎至孕10周",
+      "total_sentence_count": 3,
+      "valid_topic_sentence_count": 2,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.3333333333333333,
+      "has_valid_topic": true,
+      "topic_coverage": 2,
+      "topic_distribution_json": "{\"0\": 0.5, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.5, \"8\": 0.0, \"9\": 0.0, \"10\": 0.0, \"11\": 0.0, \"12\": 0.0, \"13\": 0.0, \"14\": 0.0, \"15\": 0.0, \"16\": 0.0, \"17\": 0.0, \"18\": 0.0}",
+      "dominant_topic_id": 0.0,
+      "dominant_topic_share": 0.5,
+      "fixed_topic_k": 20
+    }
+  ]
+}

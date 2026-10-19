@@ -1,0 +1,9 @@
+{
+  "run_ts_utc": "2026-10-06T10:57:58+00:00",
+  "input_path": "D:\\medical_research\\data\\analysis\\flow_run_answer_text_features.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\flow_run100_answer_text_features.parquet",
+  "source_sample_layer": "flow_run",
+  "selection_rule": "first_100_questions_by_sample_draw_order_from_existing_flow_run_manifest",
+  "sampled_question_count": 100,
+  "sampled_answer_rows": 859
+}

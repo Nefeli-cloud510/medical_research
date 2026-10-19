@@ -1,0 +1,105 @@
+{
+  "run_ts_utc": "2026-10-07T08:37:17+00:00",
+  "input_path": "D:\\medical_research\\data\\analysis\\flow_run100_knowledge_metrics_bge.parquet",
+  "output_xlsx_path": "D:\\medical_research\\outputs\\tables\\20d_flow_run100_prior_sensitivity_checks.xlsx",
+  "group_summary_rows": 6,
+  "correlation_rows": 3,
+  "small_sample_note_group": "20-24",
+  "group_summary_preview": [
+    {
+      "prior_group": "1",
+      "n": 93,
+      "centroid_mean": 0.2823052220447089,
+      "centroid_median": 0.2656070590019226,
+      "nearest_mean": 0.2823052226856191,
+      "nearest_median": 0.2656070590019226,
+      "sentence_mean": 0.33154100067512965,
+      "sentence_median": 0.33006593585014343,
+      "note": ""
+    },
+    {
+      "prior_group": "2",
+      "n": 87,
+      "centroid_mean": 0.22280701275529533,
+      "centroid_median": 0.2158716320991516,
+      "nearest_mean": 0.23628636132711653,
+      "nearest_median": 0.22309911251068115,
+      "sentence_mean": 0.274606696319306,
+      "sentence_median": 0.2858537435531616,
+      "note": ""
+    },
+    {
+      "prior_group": "3-4",
+      "n": 163,
+      "centroid_mean": 0.19792771193147438,
+      "centroid_median": 0.18795162439346313,
+      "nearest_mean": 0.21056231033582629,
+      "nearest_median": 0.20340800285339355,
+      "sentence_mean": 0.24581419644545924,
+      "sentence_median": 0.2421504557132721,
+      "note": ""
+    },
+    {
+      "prior_group": "5-9",
+      "n": 276,
+      "centroid_mean": 0.17137802986131198,
+      "centroid_median": 0.158584326505661,
+      "nearest_mean": 0.1788529587396677,
+      "nearest_median": 0.1692502200603485,
+      "sentence_mean": 0.21593909805127676,
+      "sentence_median": 0.20880427211523056,
+      "note": ""
+    },
+    {
+      "prior_group": "10-19",
+      "n": 133,
+      "centroid_mean": 0.14731501367755404,
+      "centroid_median": 0.13342303037643433,
+      "nearest_mean": 0.1534694634882131,
+      "nearest_median": 0.15122699737548828,
+      "sentence_mean": 0.1868387965443439,
+      "sentence_median": 0.18426327407360077,
+      "note": ""
+    },
+    {
+      "prior_group": "20-24",
+      "n": 7,
+      "centroid_mean": 0.15222106661115373,
+      "centroid_median": 0.15761637687683105,
+      "nearest_mean": 0.15809571743011475,
+      "nearest_median": 0.1564164161682129,
+      "sentence_mean": 0.18025448066847666,
+      "sentence_median": 0.16174852848052979,
+      "note": "样本较少，仅作观察"
+    }
+  ],
+  "correlation_summary": [
+    {
+      "metric": "centroid",
+      "metric_column": "knowledge_differentiation_bge_centroid",
+      "n": 759,
+      "pearson_r": -0.3979833265149327,
+      "pearson_pvalue": 3.2637984075862925e-30,
+      "spearman_rho": -0.45823440291756456,
+      "spearman_pvalue": 1.1358109054253348e-40
+    },
+    {
+      "metric": "nearest",
+      "metric_column": "knowledge_differentiation_bge_nearest_prior",
+      "n": 759,
+      "pearson_r": -0.3968107208862889,
+      "pearson_pvalue": 4.976394523280175e-30,
+      "spearman_rho": -0.447957557873159,
+      "spearman_pvalue": 9.804453411023919e-39
+    },
+    {
+      "metric": "sentence",
+      "metric_column": "knowledge_differentiation_bge_sentence_mean",
+      "n": 759,
+      "pearson_r": -0.4056427133475138,
+      "pearson_pvalue": 1.990338679329474e-31,
+      "spearman_rho": -0.44555748212528395,
+      "spearman_pvalue": 2.71735413552689e-38
+    }
+  ]
+}

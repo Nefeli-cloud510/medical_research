@@ -1,0 +1,30 @@
+{
+  "run_ts_utc": "2026-10-06T07:43:14+00:00",
+  "scope": "major5_main_regression_library_for_text_cleaning_and_actual_computation",
+  "input_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid_core_physician_titles_with_hospitallevel_major5.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\major5_text_cleaning_prep.parquet",
+  "join_status": {
+    "question_answer_already_joined_in_input": true,
+    "action_taken": "materialize_text_cleaning_prep_version_from_major5",
+    "note": "major5 已包含 question_desc 与 answer 等问答拼接字段，本步不再回到原始表重复 join。"
+  },
+  "row_counts": {
+    "total_rows": 2367171,
+    "distinct_question_user_pairs": 2367171,
+    "rows_in_multi_answer_pairs": 0,
+    "followup_rows_same_doctor": 0
+  },
+  "question_user_repeat_stats": {
+    "multi_answer_pairs": 0,
+    "multi_answer_pair_rate": 0.0,
+    "max_answers_per_pair": 1
+  },
+  "pair_count_distribution": [
+    {
+      "question_user_answer_count": 1,
+      "pair_count": 2367171,
+      "pair_share": 1.0
+    }
+  ],
+  "top_multi_answer_pairs": []
+}

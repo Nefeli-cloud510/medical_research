@@ -1,0 +1,40 @@
+{
+  "run_ts_utc": "2026-09-22T03:52:25+00:00",
+  "scope": "answer_question_only",
+  "question_file": "D:\\medical_research\\data\\raw\\question.parquet",
+  "answer_file": "D:\\medical_research\\data\\raw\\answer.parquet",
+  "sample_metrics": {
+    "question_count": 278346,
+    "answer_count": 2837042,
+    "doctor_count": 32759,
+    "avg_answers_per_question": 10.193,
+    "question_share_with_multi_answers": 0.8629367765299304,
+    "answer_share_seq_ge_2": 0.9018770254370573,
+    "question_text_median_length": 70.0,
+    "answer_text_median_length": 64.0,
+    "response_delay_median_hours": 0.5763888888888888,
+    "response_delay_p95_hours": 41.91044444444447,
+    "thumb_median": 0.0,
+    "thumb_p95": 1.0,
+    "observed_vs_recorded_ans_count_match_rate": 0.9948876578071896,
+    "bounty_group_rule": "bounty>12.0"
+  },
+  "outputs": {
+    "summary_json": "D:\\medical_research\\outputs\\audit\\02_eda_summary.json",
+    "tables": [
+      "D:\\medical_research\\outputs\\tables\\02_sample_metrics.csv",
+      "D:\\medical_research\\outputs\\tables\\02_patient_features.csv",
+      "D:\\medical_research\\outputs\\tables\\02_descriptive_relationships.csv",
+      "D:\\medical_research\\outputs\\tables\\02_word_frequency.csv"
+    ],
+    "figures": [
+      "D:\\medical_research\\outputs\\figures\\02_sample_and_thread.png",
+      "D:\\medical_research\\outputs\\figures\\02_thumb_distribution.png",
+      "D:\\medical_research\\outputs\\figures\\02_structure_distributions.png",
+      "D:\\medical_research\\outputs\\figures\\02_text_and_time.png",
+      "D:\\medical_research\\outputs\\figures\\02_patient_and_tags.png",
+      "D:\\medical_research\\outputs\\figures\\02_word_frequencies.png",
+      "D:\\medical_research\\outputs\\figures\\02_descriptive_relationships.png"
+    ]
+  }
+}

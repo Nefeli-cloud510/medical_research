@@ -1,0 +1,217 @@
+version: 1
+updated_at_utc: '2026-09-21T17:52:47+00:00'
+raw_root: data/raw
+policy:
+  raw_read_only: true
+  rename_in_code_forbidden: true
+  keep_source_column_name: true
+  notes: Use this mapping for renaming in downstream staging scripts only.
+id_fields_of_interest:
+  - question_id
+files:
+  - file_name: answer.parquet
+    relative_path: data/raw/answer.parquet
+    column_mappings:
+      - source_name: question_id
+        target_name: question_id
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: true
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '例：100002518649569281，标定每条问题的唯一字段；question的主键，answer的外键'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: user_id
+        target_name: user_id
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: true
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '回答医生的平台账号id，唯一标定每位医生'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: tech_title
+        target_name: tech_title
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '例：主治医师，每位医生的职称'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: dept
+        target_name: dept
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '例：消化内科，每位医生所属的领域'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: hospital
+        target_name: hospital
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '每位医生的所属医院/单位'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: answer
+        target_name: answer
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '具体作答的文本内容'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0450
+      - source_name: create_time
+        target_name: create_time
+        source_type: 'timestamp[us]'
+        target_type: 'timestamp[us]'
+        is_id: false
+        is_time_candidate: true
+        time_representation: 'timestamp_type'
+        explaination: '回复/提问发布的具体时间'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: thumb
+        target_name: thumb
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '每条回答获得的点赞数'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: help_status
+        target_name: help_status
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '高置信推断：回答的帮助/推荐状态编码；0大概率为普通回答，1/2为被平台或用户标记为更有帮助的回答状态，建议后续抽样回源页面再核验编码定义'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: seq
+        target_name: seq
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '同一 question_id 下回答的顺序号/楼层号（从1开始），可用于识别首答与回答位次'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+  - file_name: question.parquet
+    relative_path: data/raw/question.parquet
+    column_mappings:
+      - source_name: question_id
+        target_name: question_id
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: true
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '例：100002518649569281，标定每条问题的唯一字段；question的主键，answer的外键'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: gender
+        target_name: gender
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '男/女，存在NULL值'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: age
+        target_name: age
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '存在NULL值'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: address
+        target_name: address
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '省/市 级，直辖市则精确到市'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: question_desc
+        target_name: question_desc
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '字符串，具体问题的描述，呈现口语化特征，标点符号问号居多，符合问题的特征'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.5100
+      - source_name: tags
+        target_name: tags
+        source_type: 'large_string'
+        target_type: 'large_string'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'string'
+        explaination: '例：亲子育儿、咳嗽、感冒等，为具体症状/疾病的标签'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: create_time
+        target_name: create_time
+        source_type: 'timestamp[us]'
+        target_type: 'timestamp[us]'
+        is_id: false
+        is_time_candidate: true
+        time_representation: 'timestamp_type'
+        explaination: '回复/提问发布的具体时间'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: bounty
+        target_name: bounty
+        source_type: 'double'
+        target_type: 'double'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'double'
+        explaination: '问题悬赏金额/付费提问金额；微医问答存在用户提问悬赏与最佳回答取赏机制'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: views
+        target_name: views
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '问题页面浏览量（PV/点击访问量），反映问题曝光度'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000
+      - source_name: ans_count
+        target_name: ans_count
+        source_type: 'int64'
+        target_type: 'int64'
+        is_id: false
+        is_time_candidate: false
+        time_representation: 'int_non_timestamp_or_low_precision'
+        explaination: '本条问题下回答的数量'
+        json_like_ratio: 0.0000
+        question_mark_ratio: 0.0000

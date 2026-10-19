@@ -1,0 +1,681 @@
+{
+  "run_ts_utc": "2026-10-06T10:09:15+00:00",
+  "scope": "major5_stratified_question_samples",
+  "input_path": "D:\\medical_research\\data\\analysis\\major5_text_cleaning_prep_seq_clean.parquet",
+  "output_answers_path": "D:\\medical_research\\data\\analysis\\major5_stratified_question_samples_answers.parquet",
+  "question_manifest_path": "D:\\medical_research\\outputs\\tables\\18_major5_stratified_question_samples_question_manifest.csv",
+  "sampling_principles": {
+    "sample_unit": "question_id",
+    "preserve_all_answers_within_sampled_question": true,
+    "sampling_reason": "不能直接随机抽回答行，否则会破坏题内前序历史。",
+    "stratification_dimensions": [
+      "question_month",
+      "dept_strata",
+      "answer_count_band"
+    ],
+    "answer_count_band_definition": {
+      "1": "ans_count = 1",
+      "2-3": "2 <= ans_count <= 3",
+      "4-5": "4 <= ans_count <= 5",
+      "6-10": "6 <= ans_count <= 10",
+      "11-20": "11 <= ans_count <= 20",
+      "21+": "ans_count >= 21"
+    },
+    "global_random_seed": 20261006,
+    "sample_layers_are_disjoint": true
+  },
+  "population": {
+    "total_questions": 270317,
+    "total_answer_rows": 2367171,
+    "question_month_count": 51,
+    "department_count": 1956
+  },
+  "layer_summaries": {
+    "flow_run": {
+      "target_question_count": 1000,
+      "purpose": "流程试跑：检查代码、顺序、缺失与输出结构。",
+      "sampled_question_count": 1000,
+      "sampled_answer_rows": 8948,
+      "month_distribution_preview": [
+        {
+          "question_month": "2017-09",
+          "question_count": 7
+        },
+        {
+          "question_month": "2017-10",
+          "question_count": 8
+        },
+        {
+          "question_month": "2017-11",
+          "question_count": 7
+        },
+        {
+          "question_month": "2017-12",
+          "question_count": 7
+        },
+        {
+          "question_month": "2018-01",
+          "question_count": 8
+        },
+        {
+          "question_month": "2018-02",
+          "question_count": 7
+        },
+        {
+          "question_month": "2018-03",
+          "question_count": 11
+        },
+        {
+          "question_month": "2018-04",
+          "question_count": 14
+        },
+        {
+          "question_month": "2018-05",
+          "question_count": 18
+        },
+        {
+          "question_month": "2018-06",
+          "question_count": 31
+        },
+        {
+          "question_month": "2018-07",
+          "question_count": 46
+        },
+        {
+          "question_month": "2018-08",
+          "question_count": 53
+        },
+        {
+          "question_month": "2018-09",
+          "question_count": 67
+        },
+        {
+          "question_month": "2018-10",
+          "question_count": 92
+        },
+        {
+          "question_month": "2018-11",
+          "question_count": 79
+        },
+        {
+          "question_month": "2018-12",
+          "question_count": 45
+        },
+        {
+          "question_month": "2019-01",
+          "question_count": 25
+        },
+        {
+          "question_month": "2019-02",
+          "question_count": 19
+        },
+        {
+          "question_month": "2019-03",
+          "question_count": 21
+        },
+        {
+          "question_month": "2019-04",
+          "question_count": 18
+        },
+        {
+          "question_month": "2019-05",
+          "question_count": 16
+        },
+        {
+          "question_month": "2019-06",
+          "question_count": 16
+        },
+        {
+          "question_month": "2019-07",
+          "question_count": 16
+        },
+        {
+          "question_month": "2019-08",
+          "question_count": 15
+        }
+      ],
+      "answer_count_band_distribution": [
+        {
+          "answer_count_band": "1",
+          "question_count": 62
+        },
+        {
+          "answer_count_band": "2-3",
+          "question_count": 45
+        },
+        {
+          "answer_count_band": "4-5",
+          "question_count": 50
+        },
+        {
+          "answer_count_band": "6-10",
+          "question_count": 304
+        },
+        {
+          "answer_count_band": "11-20",
+          "question_count": 529
+        },
+        {
+          "answer_count_band": "21+",
+          "question_count": 10
+        }
+      ],
+      "top_departments_preview": [
+        {
+          "dept": "皮肤科",
+          "question_count": 98
+        },
+        {
+          "dept": "妇产科",
+          "question_count": 87
+        },
+        {
+          "dept": "儿科",
+          "question_count": 63
+        },
+        {
+          "dept": "消化内科",
+          "question_count": 54
+        },
+        {
+          "dept": "泌尿外科",
+          "question_count": 50
+        },
+        {
+          "dept": "妇科",
+          "question_count": 48
+        },
+        {
+          "dept": "内科",
+          "question_count": 43
+        },
+        {
+          "dept": "神经内科",
+          "question_count": 41
+        },
+        {
+          "dept": "骨科",
+          "question_count": 28
+        },
+        {
+          "dept": "神经外科",
+          "question_count": 25
+        },
+        {
+          "dept": "眼科",
+          "question_count": 24
+        },
+        {
+          "dept": "骨外科",
+          "question_count": 22
+        },
+        {
+          "dept": "皮肤性病科",
+          "question_count": 21
+        },
+        {
+          "dept": "儿内科",
+          "question_count": 19
+        },
+        {
+          "dept": "肿瘤科",
+          "question_count": 18
+        },
+        {
+          "dept": "耳鼻喉科",
+          "question_count": 18
+        },
+        {
+          "dept": "肿瘤内科",
+          "question_count": 17
+        },
+        {
+          "dept": "耳鼻咽喉科",
+          "question_count": 16
+        },
+        {
+          "dept": "心血管内科",
+          "question_count": 16
+        },
+        {
+          "dept": "口腔科",
+          "question_count": 13
+        }
+      ]
+    },
+    "measurement_dev": {
+      "target_question_count": 5000,
+      "purpose": "测量开发：调试清洗规则、主题模型与指标选择。",
+      "sampled_question_count": 5000,
+      "sampled_answer_rows": 44290,
+      "month_distribution_preview": [
+        {
+          "question_month": "2017-09",
+          "question_count": 33
+        },
+        {
+          "question_month": "2017-10",
+          "question_count": 39
+        },
+        {
+          "question_month": "2017-11",
+          "question_count": 36
+        },
+        {
+          "question_month": "2017-12",
+          "question_count": 34
+        },
+        {
+          "question_month": "2018-01",
+          "question_count": 39
+        },
+        {
+          "question_month": "2018-02",
+          "question_count": 35
+        },
+        {
+          "question_month": "2018-03",
+          "question_count": 56
+        },
+        {
+          "question_month": "2018-04",
+          "question_count": 70
+        },
+        {
+          "question_month": "2018-05",
+          "question_count": 91
+        },
+        {
+          "question_month": "2018-06",
+          "question_count": 157
+        },
+        {
+          "question_month": "2018-07",
+          "question_count": 229
+        },
+        {
+          "question_month": "2018-08",
+          "question_count": 264
+        },
+        {
+          "question_month": "2018-09",
+          "question_count": 335
+        },
+        {
+          "question_month": "2018-10",
+          "question_count": 459
+        },
+        {
+          "question_month": "2018-11",
+          "question_count": 393
+        },
+        {
+          "question_month": "2018-12",
+          "question_count": 223
+        },
+        {
+          "question_month": "2019-01",
+          "question_count": 124
+        },
+        {
+          "question_month": "2019-02",
+          "question_count": 93
+        },
+        {
+          "question_month": "2019-03",
+          "question_count": 105
+        },
+        {
+          "question_month": "2019-04",
+          "question_count": 91
+        },
+        {
+          "question_month": "2019-05",
+          "question_count": 80
+        },
+        {
+          "question_month": "2019-06",
+          "question_count": 79
+        },
+        {
+          "question_month": "2019-07",
+          "question_count": 82
+        },
+        {
+          "question_month": "2019-08",
+          "question_count": 78
+        }
+      ],
+      "answer_count_band_distribution": [
+        {
+          "answer_count_band": "1",
+          "question_count": 485
+        },
+        {
+          "answer_count_band": "2-3",
+          "question_count": 296
+        },
+        {
+          "answer_count_band": "4-5",
+          "question_count": 342
+        },
+        {
+          "answer_count_band": "6-10",
+          "question_count": 1296
+        },
+        {
+          "answer_count_band": "11-20",
+          "question_count": 2393
+        },
+        {
+          "answer_count_band": "21+",
+          "question_count": 188
+        }
+      ],
+      "top_departments_preview": [
+        {
+          "dept": "皮肤科",
+          "question_count": 442
+        },
+        {
+          "dept": "妇产科",
+          "question_count": 359
+        },
+        {
+          "dept": "儿科",
+          "question_count": 267
+        },
+        {
+          "dept": "消化内科",
+          "question_count": 218
+        },
+        {
+          "dept": "内科",
+          "question_count": 194
+        },
+        {
+          "dept": "泌尿外科",
+          "question_count": 192
+        },
+        {
+          "dept": "妇科",
+          "question_count": 182
+        },
+        {
+          "dept": "神经内科",
+          "question_count": 134
+        },
+        {
+          "dept": "眼科",
+          "question_count": 102
+        },
+        {
+          "dept": "骨外科",
+          "question_count": 94
+        },
+        {
+          "dept": "骨科",
+          "question_count": 86
+        },
+        {
+          "dept": "耳鼻咽喉科",
+          "question_count": 85
+        },
+        {
+          "dept": "口腔科",
+          "question_count": 84
+        },
+        {
+          "dept": "神经外科",
+          "question_count": 78
+        },
+        {
+          "dept": "耳鼻喉科",
+          "question_count": 72
+        },
+        {
+          "dept": "心血管内科",
+          "question_count": 71
+        },
+        {
+          "dept": "普通外科门诊",
+          "question_count": 69
+        },
+        {
+          "dept": "产科",
+          "question_count": 67
+        },
+        {
+          "dept": "呼吸内科",
+          "question_count": 67
+        },
+        {
+          "dept": "内分泌科",
+          "question_count": 66
+        }
+      ]
+    },
+    "independent_manual_validation": {
+      "target_question_count": 1000,
+      "purpose": "独立人工验证：与开发集不重叠，用于人工判断指标是否反映新增知识。",
+      "sampled_question_count": 1000,
+      "sampled_answer_rows": 8968,
+      "month_distribution_preview": [
+        {
+          "question_month": "2017-09",
+          "question_count": 7
+        },
+        {
+          "question_month": "2017-10",
+          "question_count": 8
+        },
+        {
+          "question_month": "2017-11",
+          "question_count": 7
+        },
+        {
+          "question_month": "2017-12",
+          "question_count": 7
+        },
+        {
+          "question_month": "2018-01",
+          "question_count": 8
+        },
+        {
+          "question_month": "2018-02",
+          "question_count": 7
+        },
+        {
+          "question_month": "2018-03",
+          "question_count": 11
+        },
+        {
+          "question_month": "2018-04",
+          "question_count": 14
+        },
+        {
+          "question_month": "2018-05",
+          "question_count": 18
+        },
+        {
+          "question_month": "2018-06",
+          "question_count": 31
+        },
+        {
+          "question_month": "2018-07",
+          "question_count": 46
+        },
+        {
+          "question_month": "2018-08",
+          "question_count": 53
+        },
+        {
+          "question_month": "2018-09",
+          "question_count": 67
+        },
+        {
+          "question_month": "2018-10",
+          "question_count": 92
+        },
+        {
+          "question_month": "2018-11",
+          "question_count": 79
+        },
+        {
+          "question_month": "2018-12",
+          "question_count": 45
+        },
+        {
+          "question_month": "2019-01",
+          "question_count": 25
+        },
+        {
+          "question_month": "2019-02",
+          "question_count": 19
+        },
+        {
+          "question_month": "2019-03",
+          "question_count": 21
+        },
+        {
+          "question_month": "2019-04",
+          "question_count": 18
+        },
+        {
+          "question_month": "2019-05",
+          "question_count": 16
+        },
+        {
+          "question_month": "2019-06",
+          "question_count": 16
+        },
+        {
+          "question_month": "2019-07",
+          "question_count": 16
+        },
+        {
+          "question_month": "2019-08",
+          "question_count": 15
+        }
+      ],
+      "answer_count_band_distribution": [
+        {
+          "answer_count_band": "1",
+          "question_count": 64
+        },
+        {
+          "answer_count_band": "2-3",
+          "question_count": 46
+        },
+        {
+          "answer_count_band": "4-5",
+          "question_count": 50
+        },
+        {
+          "answer_count_band": "6-10",
+          "question_count": 303
+        },
+        {
+          "answer_count_band": "11-20",
+          "question_count": 525
+        },
+        {
+          "answer_count_band": "21+",
+          "question_count": 12
+        }
+      ],
+      "top_departments_preview": [
+        {
+          "dept": "皮肤科",
+          "question_count": 98
+        },
+        {
+          "dept": "妇产科",
+          "question_count": 88
+        },
+        {
+          "dept": "儿科",
+          "question_count": 64
+        },
+        {
+          "dept": "消化内科",
+          "question_count": 54
+        },
+        {
+          "dept": "泌尿外科",
+          "question_count": 49
+        },
+        {
+          "dept": "妇科",
+          "question_count": 48
+        },
+        {
+          "dept": "内科",
+          "question_count": 43
+        },
+        {
+          "dept": "神经内科",
+          "question_count": 41
+        },
+        {
+          "dept": "骨科",
+          "question_count": 28
+        },
+        {
+          "dept": "眼科",
+          "question_count": 26
+        },
+        {
+          "dept": "神经外科",
+          "question_count": 23
+        },
+        {
+          "dept": "骨外科",
+          "question_count": 22
+        },
+        {
+          "dept": "皮肤性病科",
+          "question_count": 21
+        },
+        {
+          "dept": "儿内科",
+          "question_count": 18
+        },
+        {
+          "dept": "耳鼻喉科",
+          "question_count": 18
+        },
+        {
+          "dept": "肿瘤科",
+          "question_count": 18
+        },
+        {
+          "dept": "肿瘤内科",
+          "question_count": 17
+        },
+        {
+          "dept": "耳鼻咽喉科",
+          "question_count": 17
+        },
+        {
+          "dept": "心血管内科",
+          "question_count": 16
+        },
+        {
+          "dept": "外科",
+          "question_count": 13
+        }
+      ]
+    }
+  },
+  "overlap_checks": {
+    "flow_vs_measurement_overlap_questions": 0,
+    "flow_vs_validation_overlap_questions": 0,
+    "measurement_vs_validation_overlap_questions": 0
+  },
+  "question_id_outputs": {
+    "flow_run": "D:\\medical_research\\outputs\\tables\\18_flow_run_question_ids.csv",
+    "measurement_dev": "D:\\medical_research\\outputs\\tables\\18_measurement_dev_question_ids.csv",
+    "independent_manual_validation": "D:\\medical_research\\outputs\\tables\\18_independent_manual_validation_question_ids.csv"
+  }
+}

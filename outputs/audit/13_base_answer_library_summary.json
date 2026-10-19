@@ -1,0 +1,196 @@
+{
+  "run_ts_utc": "2026-10-06T06:12:13+00:00",
+  "scope": "answer_question_only_core_physician_titles_all_traceable_answers_round2",
+  "input_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid_core_physician_titles_with_hospitallevel_filled_round2.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\base_answer_library_core_physician_round2.parquet",
+  "identity_strategy": {
+    "real_answer_id_present_in_input": false,
+    "proxy_key_name": "answer_event_proxy_key",
+    "proxy_key_components": [
+      "question_id",
+      "user_id",
+      "answer_create_time_iso",
+      "answer_text_hash_raw"
+    ],
+    "note": "代理事件键用于复现与定位，不代表平台真实回答ID。"
+  },
+  "row_counts": {
+    "original_rows": 2748748,
+    "same_record_duplicate_rows_removed": 0,
+    "deduped_rows": 2748748,
+    "first_answer_rows_kept": 270196,
+    "followup_rows_kept": 2478552
+  },
+  "duplicate_detection": {
+    "same_record_duplicate_groups": 0,
+    "same_record_duplicate_rows_removed": 0,
+    "same_record_duplicate_rule": "question_id + user_id + answer_create_time + answer_text_hash_raw 完全一致"
+  },
+  "template_text_detection": {
+    "template_reused_rows": 42474,
+    "template_reused_text_groups": 10462,
+    "template_rule": "去重后 answer_text_hash_norm 复用，且跨 question_id 或跨 user_id"
+  },
+  "top_template_groups": [
+    {
+      "answer_text_hash_norm": "361c04ce414d0940453f36631eaa70723a978bf98e30f0a2578ceef056b9cc28",
+      "template_occurrence_count": 512,
+      "template_distinct_question_count": 512,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好，在微医申请精准预约或给微医患者客服95169打电话可以得到帮助的。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "09af2da7b7f36a79bd779ffa6cc4e5b2c67b16be25f28f6ca04c9865c3637886",
+      "template_occurrence_count": 224,
+      "template_distinct_question_count": 224,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好目前考虑症状比较明显，建议你去骨科进一步检查片子看看",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "1d4e0b334759f26ed840442398874cf64a264727af1a43e07b10ede4fe4cd2c3",
+      "template_occurrence_count": 221,
+      "template_distinct_question_count": 221,
+      "template_distinct_user_count": 1,
+      "template_example_text": "您好，我理解你焦虑不安的心情，一般这种情况，建议你寻求中医治疗，如有需要可以联系我，希望能够帮助到您，感谢您的采纳与支持，祝早日康复！",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "16b857af655f47607966b8698b0c021c44656b4b57c23c1546a253934aa9eadc",
+      "template_occurrence_count": 211,
+      "template_distinct_question_count": 211,
+      "template_distinct_user_count": 2,
+      "template_example_text": "你好，大多数胃、十二指肠炎/溃疡患者常出现上腹部灼痛、胀痛(胃溃疡以餐后痛为特征表现，十二指肠溃疡空腹痛为特征性表现、尤以夜间为甚)、食欲不振、恶心、嗳气、返酸、便秘或腹泻等症状。 意见建议：对慢性胃、十二指肠炎/溃疡的治疗，主要采用：埃司奥美拉唑（或兰索拉唑、奥美拉唑、埃索美拉唑、雷贝拉唑、泮托拉唑）抑酸治疗，对幽门螺旋杆菌检出阳性患者，应服抗生素，如、克拉霉素、甲硝唑等，可直接杀死细菌，复方铝酸铋保护胃十二指肠粘膜，同时避免用损害胃十二指肠粘膜的药物，如阿斯匹林、消炎痛、红霉素、可的松等激素类、二甲双胍等不宜应用。疗程2周，停用一个月后复查胃十二指肠镜。戒烟戒酒戒油腻，注意保暖，平时注意不要吃生冷硬烫粗糙食物，大米饭酸性不利于病情，尽量吃面食及小米粥比较有利。祝早日康复！希望我的回答能够帮助你！",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "75422f27358d8edf4132da59b71585a253258b4b88f664d5318f53b3aa9296c3",
+      "template_occurrence_count": 170,
+      "template_distinct_question_count": 170,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好，在微医上申请精准预约或给微医患者客服95169打电话可以得到帮助的。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "9ddf2dd4f71c1552444423e606452f101f8203f9715bb37850ae60ee928fe1f9",
+      "template_occurrence_count": 165,
+      "template_distinct_question_count": 165,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好！咨询微医平台在线客服很方便。电话95169。祝你顺利！",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "c30479d74b8ca25bddb5e8e645899af16b4ed17438c9b80ca8a39cbbbbdce0b8",
+      "template_occurrence_count": 150,
+      "template_distinct_question_count": 150,
+      "template_distinct_user_count": 2,
+      "template_example_text": "您好，非常荣幸为您解答问题，不要着急，我们大家一起帮您想办法！ 根据您描述的情况，给您如下意见供参考！  请您不要过于担心和焦虑，不会出现您担心的问题，请您一定要放松心态，平时合理膳食，保证充足睡眠，适度运动，避免紧张和焦虑的情绪，把主要的精力用在工作和学习上。 祝您及家人身体健康，生活幸福，再次感谢您对微医健康平台的信任，希望我的建议对您有帮助！",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "28487241c3aa71b9de5f5b54fd7e9ece73795c734c4d2a66537936c99efda8c8",
+      "template_occurrence_count": 140,
+      "template_distinct_question_count": 140,
+      "template_distinct_user_count": 1,
+      "template_example_text": "建议拍张清晰的图片看一下，看不到图片不好说",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "01b0d9255685eb55293f41fd163f5f6bd974f07cf8bf409ad972af6b6c66bf9b",
+      "template_occurrence_count": 139,
+      "template_distinct_question_count": 139,
+      "template_distinct_user_count": 2,
+      "template_example_text": "可以中药治疗。祝你健康快乐。一定会好的。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "a4caf882c1ba0add8c7ad7e53608071d61619328184ef871a14d2d98f346eede",
+      "template_occurrence_count": 135,
+      "template_distinct_question_count": 135,
+      "template_distinct_user_count": 1,
+      "template_example_text": "目前考虑是心理疾病引起的，好好找个心理科医生疏导下，必要时药物治疗",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "7b6f8702a3c424231697f43d5b2922d7df640193777101c4aa6c35eb3219c500",
+      "template_occurrence_count": 105,
+      "template_distinct_question_count": 105,
+      "template_distinct_user_count": 2,
+      "template_example_text": "你好，根据您提供的情况，建议您到医院挂中医科进行面诊",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "9eada87af7a0cc9a90894c905d1fd184b7839da93b2583d2f87c8bf5784ee6a7",
+      "template_occurrence_count": 105,
+      "template_distinct_question_count": 105,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好，目前考虑你的症状是比较明显的了了，建议你去骨科进一步检查片子看看有没有异常",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "341ac2ef1f246c8061f1ca499f644cd5e520e72473142134212f8d5138ac7263",
+      "template_occurrence_count": 101,
+      "template_distinct_question_count": 101,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好，都没有问题。你所说的这些都是些琐碎小事，别太纠结，生活中的这些小事随意就好，随心所欲吧，有些养生专家说这样也不好，那样也不好，但是这些不好的状况又发生在谁身上了，别总是计较这些芝麻大的小事了，那样的话生活会失去许多的精彩了，豪爽些、豪迈些，让我们在这世界上潇洒走一回吧，让一些不愉快做为我们美丽人生中的小插曲吧。祝生活愉快！",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "1127c6bb7929d9eedde4e14cabe51d04f9972681355589dacad28befde6dfefd",
+      "template_occurrence_count": 100,
+      "template_distinct_question_count": 100,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好！这是荨麻疹是一种暂时性、瘙痒传性血管反应性皮肤病，以皮肤粘膜潮红斑和风团。病因复杂，环境中的理化因素如感染、食物、药物、温度变化、飘尘、花粉，自身疾病如特应性体质等等，建议你去三甲医院检查一下过敏源，袪除病因及加重因素是治疗关键。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "aa6557e51ac0255c96348108dd7fc221432e3a6ddbe62912b0665968a5e721b2",
+      "template_occurrence_count": 99,
+      "template_distinct_question_count": 99,
+      "template_distinct_user_count": 2,
+      "template_example_text": "你好，这样的症状建议挂中医科门诊中药调理好些。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "5d197129b28f64b956d00507b5e9d812e2e8c18a4f2b2aed9adc97ef9eb6a055",
+      "template_occurrence_count": 92,
+      "template_distinct_question_count": 92,
+      "template_distinct_user_count": 2,
+      "template_example_text": "勃起功能异常  勃起功能异常包括硬度不好的原因很多。最多见的是心理因素，就是功能性的问题。治疗可以应用药物治疗，比如性生活前一小时应用万艾可，或者希爱力。一片就可以。用后需要两个人配合，刺激才行。效果好的话，万艾可或者希爱力性生活前可以逐渐减量，减为半量，甚至逐渐减为四分之一量。最终达到不用。 注意万艾可或者希爱力不能与硝酸脂类药物同时服用！注意别有思想负担，性生活的时候不能太晚，别太累，别心情不好，这些都有影响。要体力，精力心情都好的时候进行性生活。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "24aef5e0877d80060c9bcb51c2cdba363b4b5ad2972f217068d8e82052116d4c",
+      "template_occurrence_count": 89,
+      "template_distinct_question_count": 89,
+      "template_distinct_user_count": 2,
+      "template_example_text": "前列腺炎   1.坚持治疗，治疗期间不要随便换药或更换治疗方法，因为症状的缓解常须一段时间，早期治疗要维持2周以上，某些感染要8～12周。如果随便换药，易致菌群失调或产生耐药，导致治疗的不彻底。  2.规律性生活，不能忍精不射，不要频繁手淫，避免不洁性交。  3.正确认识前列腺炎，保持良好的心态，减轻心理压力，以免夸大症状，产生头晕、记忆力下降、焦虑、多疑、失眠等症状。  4.多喝水，勤排尿，保持大便通畅，坚持热水坐浴或热水袋热敷会阴。  5.忌烟酒，不吃辛辣刺激性食物。  6.忌久坐，避免长时间骑车，坚持运动锻炼，最好是慢跑加更多下体锻炼，避免剧烈运动。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "8de8164722002e31870c1e6b28c2881047f13492c4f002ce828acc251321453a",
+      "template_occurrence_count": 87,
+      "template_distinct_question_count": 87,
+      "template_distinct_user_count": 1,
+      "template_example_text": "你好，大多数胃炎、溃疡患者常出现上腹部灼痛、胀痛、尤以进餐后为甚，食欲不振、恶心、嗳气、便秘或腹泻等症状。 意见建议：对慢性胃炎/溃疡的治疗，主要采用：埃司奥美拉唑（或兰索拉唑、奥美拉唑、埃索美拉唑、雷贝拉唑、泮托拉唑）抑酸治疗，对幽门螺旋杆菌检出阳性患者，应服抗生素，如、克拉霉素、甲硝唑等，可直接杀死细菌，复方铝酸铋保护胃粘膜，同时避免用损害胃粘膜的药物，如阿斯匹林、消炎痛、红霉素、可的松等激素类、二甲双胍等不宜应用。疗程2周，停用一个月后复查胃镜。戒烟戒酒，避免精神紧张，保证充足睡眠，注意保持身体温暖，不要着凉，平时注意不要吃生冷硬烫粗糙食物，大米饭酸性不利于病情，尽量吃面食及小米粥比较有利。祝早日康复！希望我的回答能够帮助你！",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "a060c236ab512a4984f5ff2e76fdf104ba4db3014dff6e54f510ab0a409e1cfd",
+      "template_occurrence_count": 84,
+      "template_distinct_question_count": 84,
+      "template_distinct_user_count": 2,
+      "template_example_text": "可以用中药治疗。祝你健康快乐。一定会好的。",
+      "is_template_text_reused": true
+    },
+    {
+      "answer_text_hash_norm": "af8441cff2e82c3c866e5267ca07c6d1c1e54f4faa339eb3618905e7eede6587",
+      "template_occurrence_count": 81,
+      "template_distinct_question_count": 81,
+      "template_distinct_user_count": 2,
+      "template_example_text": "您好，非常荣幸为您解答问题，不要着急，我们大家一起帮您想办法！ 根据您描述的情况，给您如下意见供参考！  考虑淋巴结肿大可能性大。 根据发生的时间可以诊断为急性和慢性淋巴结炎。 急性淋巴结炎可能有引流区域的感染比如中耳炎，头皮软组织感染：主要针对原发病灶的及时处理；抗生素的应用；注意休息；局部形成脓肿应切开引流；       慢性淋巴结炎通常无需特殊治疗。       一般正常的淋巴结直径在0.5cm以内，质地柔软，表面光滑，于周围组织无粘连，如果直径大于0.5cm，属于淋巴结肿大。如果淋巴结轻度肿大，质软、活动，不伴有其他症状，暂时不需治疗，应密切观察变化，如果出现不明原因的局部肿大较多、质硬，生长迅速，伴有发热，消瘦等症状，应及时来医院就诊，彩超检查早发现，早诊断，早治疗。警惕严重疾病如恶性肿瘤的可能。 祝您及家人身体健康，生活幸福，再次感谢您对微医健康平台的信任，希望我的建议对您有帮助！",
+      "is_template_text_reused": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "run_ts_utc": "2026-09-22T08:02:54+00:00",
+  "scope": "answer_question_only",
+  "profile_table": "D:\\medical_research\\outputs\\tables\\03_field_value_profile.csv",
+  "count_table": "D:\\medical_research\\outputs\\tables\\03_field_value_counts.csv",
+  "field_count": 20,
+  "count_row_count": 279734,
+  "text_summary_fields": [
+    "answer",
+    "question_desc"
+  ]
+}

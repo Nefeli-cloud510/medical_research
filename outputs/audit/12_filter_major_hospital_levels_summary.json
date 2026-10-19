@@ -1,0 +1,106 @@
+{
+  "run_ts_utc": "2026-10-06T05:49:21+00:00",
+  "scope": "answer_question_only_core_physician_titles_major5_hospital_levels",
+  "input_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid_core_physician_titles_with_hospitallevel_filled_round2.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid_core_physician_titles_with_hospitallevel_major5.parquet",
+  "filter_rule": {
+    "keep_levels": [
+      "一级甲等",
+      "二级乙等",
+      "三级乙等",
+      "三级甲等",
+      "二级甲等"
+    ],
+    "drop_other_hospital_levels": true
+  },
+  "row_counts": {
+    "original_rows": 2748748,
+    "filtered_rows": 2367171,
+    "dropped_rows": 381577,
+    "keep_rate": 0.861182,
+    "drop_rate": 0.138818
+  },
+  "distribution_before": {
+    "三级甲等": 1963936,
+    "二级甲等": 280266,
+    "一级医院": 151205,
+    "UNMATCHED": 133071,
+    "三级医院": 53597,
+    "一级甲等": 47484,
+    "二级乙等": 43556,
+    "三级乙等": 31929,
+    "二级医院": 29358,
+    "其他": 7310,
+    "对外综合": 4322,
+    "一级乙等": 1313,
+    "三级丙等": 470,
+    "县级甲等疾控中心": 313,
+    "二级丙等": 289,
+    "对外专科": 138,
+    "二级甲等（已晋升三级）": 128,
+    "二级甲等→已升三级": 61,
+    "一级社区卫生服务中心": 1,
+    "一级丙等": 1
+  },
+  "distribution_after": {
+    "三级甲等": 1963936,
+    "二级甲等": 280266,
+    "一级甲等": 47484,
+    "二级乙等": 43556,
+    "三级乙等": 31929
+  },
+  "dropped_distribution": {
+    "一级医院": 151205,
+    "UNMATCHED": 133071,
+    "三级医院": 53597,
+    "二级医院": 29358,
+    "其他": 7310,
+    "对外综合": 4322,
+    "一级乙等": 1313,
+    "三级丙等": 470,
+    "县级甲等疾控中心": 313,
+    "二级丙等": 289,
+    "对外专科": 138,
+    "二级甲等（已晋升三级）": 128,
+    "二级甲等→已升三级": 61,
+    "一级社区卫生服务中心": 1,
+    "一级丙等": 1
+  },
+  "top_distribution_rows_after_filter": [
+    {
+      "hospitallevel": "三级甲等",
+      "row_count": 1963936,
+      "row_share": 0.829655,
+      "distinct_hospital_count": 1770,
+      "distinct_hospital_share": 0.473136
+    },
+    {
+      "hospitallevel": "二级甲等",
+      "row_count": 280266,
+      "row_share": 0.118397,
+      "distinct_hospital_count": 1395,
+      "distinct_hospital_share": 0.372895
+    },
+    {
+      "hospitallevel": "一级甲等",
+      "row_count": 47484,
+      "row_share": 0.020059,
+      "distinct_hospital_count": 196,
+      "distinct_hospital_share": 0.052392
+    },
+    {
+      "hospitallevel": "二级乙等",
+      "row_count": 43556,
+      "row_share": 0.0184,
+      "distinct_hospital_count": 173,
+      "distinct_hospital_share": 0.046244
+    },
+    {
+      "hospitallevel": "三级乙等",
+      "row_count": 31929,
+      "row_share": 0.013488,
+      "distinct_hospital_count": 207,
+      "distinct_hospital_share": 0.055333
+    }
+  ]
+}

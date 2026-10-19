@@ -1,0 +1,44 @@
+{
+  "run_ts_utc": "2026-09-28T16:22:04+00:00",
+  "scope": "answer_question_only",
+  "inputs": {
+    "question_path": "D:\\medical_research\\data\\raw\\question.parquet",
+    "answer_path": "D:\\medical_research\\data\\raw\\answer.parquet",
+    "question_rows": 278346,
+    "answer_rows": 2837042,
+    "question_unique_ids": 278346,
+    "answer_unique_question_ids": 278346
+  },
+  "output": {
+    "joined_path": "D:\\medical_research\\data\\staging\\question_answer_joined.parquet",
+    "joined_rows": 2837042,
+    "joined_columns": [
+      "question_id",
+      "seq",
+      "user_id",
+      "tech_title",
+      "dept",
+      "hospital",
+      "answer",
+      "thumb",
+      "help_status",
+      "answer_create_time",
+      "gender",
+      "age",
+      "address",
+      "question_desc",
+      "tags",
+      "bounty",
+      "views",
+      "ans_count",
+      "question_create_time"
+    ],
+    "missing_question_side_rows": 0,
+    "question_match_rate_in_answers": 1.0
+  },
+  "notes": [
+    "This step only performs question-answer joining and column disambiguation.",
+    "No record filtering, deduplication, text cleaning, or feature engineering is applied here.",
+    "create_time is preserved as question_create_time and answer_create_time."
+  ]
+}

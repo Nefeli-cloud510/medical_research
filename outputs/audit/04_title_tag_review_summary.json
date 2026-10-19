@@ -1,0 +1,34 @@
+{
+  "run_ts_utc": "2026-09-29T03:15:19+00:00",
+  "scope": "answer_question_only",
+  "output_csv_path": "D:\\medical_research\\outputs\\tables\\04_title_tag_full_distribution_and_merge_suggestions.csv",
+  "tech_title_summary": {
+    "non_missing_count": 2813355,
+    "distinct_value_count": 27,
+    "top_5": {
+      "副主任医师": 1076421,
+      "主治医师": 830627,
+      "主任医师": 614467,
+      "住院医师": 201385,
+      "医师": 26033
+    }
+  },
+  "tags_summary": {
+    "non_missing_row_count": 247764,
+    "token_occurrence_count": 675335,
+    "distinct_split_tag_count": 9674,
+    "top_10": {
+      "就医互助": 113837,
+      "疼痛": 13275,
+      "怀孕": 12086,
+      "咳嗽": 11111,
+      "女性健康": 8559,
+      "发烧": 7720,
+      "亲子育儿": 7489,
+      "感染": 7290,
+      "慢病调理": 7206,
+      "结节": 6762
+    }
+  },
+  "row_count": 9701
+}

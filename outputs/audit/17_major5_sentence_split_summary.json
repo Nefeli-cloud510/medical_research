@@ -1,0 +1,64 @@
+{
+  "run_ts_utc": "2026-10-06T09:52:47+00:00",
+  "scope": "major5_answer_sentence_split",
+  "input_path": "D:\\medical_research\\data\\analysis\\major5_text_cleaning_prep_seq_clean.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\major5_answer_sentences.parquet",
+  "sentence_split_rules": {
+    "primary_boundaries": [
+      "。",
+      "？",
+      "！",
+      "；",
+      "newline"
+    ],
+    "secondary_boundaries_supported": [
+      "?",
+      "!",
+      ";",
+      ".",
+      "．",
+      "｡"
+    ],
+    "decimal_protection": "数字内部的小数点不作为句界。",
+    "condition_clause_protection_note": "不以逗号为句界，尽量保留“如果…，应…”等条件句在同一语义单元中。"
+  },
+  "event_id_definition": {
+    "field_name": "event_id",
+    "construction": "question_id|user_id|time_seq",
+    "note": "当前 major5 主样本无平台真实 answer_id，因此 event_id 为可回溯代理事件键，不是平台真实回答 ID。"
+  },
+  "event_stats": {
+    "total_events_scanned": 2367171,
+    "nonempty_answer_events": 2367132,
+    "empty_answer_events": 39,
+    "single_sentence_events": 763685,
+    "multi_sentence_events": 1603447,
+    "max_sentences_per_event": 166,
+    "condition_keyword_event_count": 1789938,
+    "decimal_event_count": 49381
+  },
+  "sentence_stats": {
+    "total_sentences": 6931077,
+    "average_sentences_per_nonempty_event": 2.928048,
+    "average_sentence_char_count": 30.031775,
+    "min_sentence_char_count": 1,
+    "max_sentence_char_count": 1282
+  },
+  "output_fields": [
+    "event_id",
+    "question_id",
+    "user_id",
+    "time_seq",
+    "seq",
+    "answer_create_time",
+    "sentence_id",
+    "sentence_order",
+    "sentence_text",
+    "sentence_char_count"
+  ],
+  "manual_review_outputs": {
+    "condition_event_samples": "D:\\medical_research\\outputs\\tables\\17_sentence_split_condition_event_samples_major5.csv",
+    "decimal_event_samples": "D:\\medical_research\\outputs\\tables\\17_sentence_split_decimal_event_samples_major5.csv",
+    "sample_limit_each": 200
+  }
+}

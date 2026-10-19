@@ -1,0 +1,486 @@
+{
+  "run_ts_utc": "2026-10-15T10:33:20+00:00",
+  "scope": "flow_run100_sentence_level_bertopic_distribution",
+  "inputs": {
+    "answer_path": "D:\\medical_research\\data\\analysis\\flow_run100_answer_text_for_topic_clean.csv",
+    "sentence_path": "D:\\medical_research\\data\\analysis\\flow_run100_sentence_text_for_topic_clean.csv"
+  },
+  "outputs": {
+    "answer_topic_output_path": "D:\\medical_research\\data\\analysis\\flow_run100_answer_sentence_topic_distribution_k10.csv",
+    "sentence_topic_output_path": "D:\\medical_research\\data\\analysis\\flow_run100_sentence_topic_labels_k10.csv",
+    "topic_info_path": "D:\\medical_research\\outputs\\tables\\20i_flow_run100_sentence_bertopic_topic_info_k10.csv"
+  },
+  "algorithm": {
+    "topic_model": "BERTopic",
+    "embedding_model": "BAAI/bge-base-zh-v1.5",
+    "embedding_model_source_used": "D:\\medical_research\\models\\bge-base-zh-v1.5",
+    "device_used": "cpu",
+    "cluster_backend": "hdbscan",
+    "document_unit_for_training": "句子级 sentence_text_topic_clean",
+    "answer_distribution_unit": "回答内句子主题计数 / 有效主题句数",
+    "fixed_topic_k_requested": 10,
+    "requested_nr_topics_including_noise": 10,
+    "actual_valid_topic_k": 9,
+    "topic_reduction_applied": true,
+    "topic_reduction_strategy": "reduce_topics -> 10",
+    "umap_n_neighbors": 15,
+    "umap_n_components": 5,
+    "hdbscan_min_cluster_size": 20,
+    "hdbscan_min_samples": 10,
+    "noise_rule": "HDBSCAN 的 -1 视为噪声句，不作为可解释主题；若整条回答没有有效主题，则主题分布记缺失。",
+    "saved_flags": [
+      "topic_coverage",
+      "noise_sentence_share",
+      "has_valid_topic"
+    ],
+    "approximate_distribution_used": false
+  },
+  "counts": {
+    "answer_rows": 859,
+    "sentence_rows": 2355,
+    "answers_with_valid_topic": 810,
+    "answers_without_valid_topic": 49,
+    "global_valid_topic_count_before_reduction": 34,
+    "global_valid_topic_count_after_reduction": 9,
+    "global_noise_sentence_count": 318
+  },
+  "distribution_summary": {
+    "topic_coverage_mean": 1.2537834691501746,
+    "topic_coverage_max": 4,
+    "noise_sentence_share_mean": 0.12466080498590941
+  },
+  "topic_info_preview": [
+    {
+      "Topic": -1,
+      "Count": 318,
+      "Name": "-1_ _1_B_12",
+      "Representation": [
+        " ",
+        "1",
+        "B",
+        "12",
+        "4",
+        "80",
+        "CT",
+        "A",
+        "2",
+        "pet"
+      ],
+      "Representative_Docs": [
+        "你好，第一 吃上多种维生素，第二多吃瘦肉，鱼，虾，豆腐。",
+        "您好，目前临床上控制青少年近视快速增加的几种方法有 增加户外活动及减少看书和使用电子产品时间、验配角膜塑形镜、试用低浓度阿托品（0.01%），希望我的回答能够帮到您！",
+        "您好 一般周即可拆线，根据您的描述基本正常，放心！"
+      ]
+    },
+    {
+      "Topic": 0,
+      "Count": 1198,
+      "Name": "0_ _2_1_3",
+      "Representation": [
+        " ",
+        "2",
+        "1",
+        "3",
+        "24",
+        "B",
+        "5",
+        "CT",
+        "4",
+        "30"
+      ],
+      "Representative_Docs": [
+        "尿道口大量流血 没有尿频 尿急尿痛，各项检查正常这种情况有可能是 尿道出血 尿道黏膜出血引起的",
+        "只有到泌外外科手术修复治疗 一切",
+        "建议至骨科门诊就诊 完善磁共振检查以鉴别囊肿的来源以及大概的组织类型"
+      ]
+    },
+    {
+      "Topic": 1,
+      "Count": 277,
+      "Name": "1_ _2_3_CT",
+      "Representation": [
+        " ",
+        "2",
+        "3",
+        "CT",
+        "13",
+        "1",
+        "7",
+        "12",
+        "4",
+        ""
+      ],
+      "Representative_Docs": [
+        "酒糟 近期有没有肠胃不好？",
+        "高维生素的食物带有深色的新鲜蔬菜及水果，如绿叶蔬菜、卷心菜、胡罗卜、洋葱、西红柿、茄子、山药、红枣、柑桔等 祝您及家人身体健康，生活幸福，再次感谢您对微医健康平台的信任，希望我的建议对您有帮助！",
+        "肠道不准备好没有办法做肠镜的啊，口服聚乙二醇不能排便 考虑对聚乙二醇反应不好，应该换一种清肠药比如硫酸镁或者彼利使。"
+      ]
+    },
+    {
+      "Topic": 2,
+      "Count": 234,
+      "Name": "2_ _10_B_14",
+      "Representation": [
+        " ",
+        "10",
+        "B",
+        "14",
+        "3",
+        "2",
+        "ct",
+        "1",
+        "pet",
+        "b"
+      ],
+      "Representative_Docs": [
+        "胎儿双顶径 ，胎心和羊水都是正常的。",
+        "是否激素水平不正常 ？",
+        "你有hpv 感染，是高危型别，是宫颈癌的高危因素。"
+      ]
+    },
+    {
+      "Topic": 3,
+      "Count": 92,
+      "Name": "3_CT_ _IgE_35",
+      "Representation": [
+        "CT",
+        " ",
+        "IgE",
+        "35",
+        "7",
+        "385",
+        "1",
+        "ct",
+        "24",
+        "3"
+      ],
+      "Representative_Docs": [
+        "超过两个月咳嗽我们叫慢性咳嗽，如果肺部CT是正常的话，首先要考虑最常见的几个疾病如咳嗽变异性哮喘，胃食管反流性咳嗽，上气道咳嗽综合征，嗜酸粒细胞性支气管炎，变应性咳嗽。",
+        "行肺部CT, 纤维支气管镜，肺功能及心脏彩超检查。",
+        "孩子喉中有痰2月，夜间有咳嗽，检查总IgE增高，过敏原检测、鼻窦CT、肺炎支原体抗体等检查无异常。"
+      ]
+    },
+    {
+      "Topic": 4,
+      "Count": 75,
+      "Name": "4_1_ __",
+      "Representation": [
+        "1",
+        " ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Representative_Docs": [
+        "有两个因素可能：1.",
+        "建议1.",
+        "初步 指导意见:1."
+      ]
+    },
+    {
+      "Topic": 5,
+      "Count": 52,
+      "Name": "5_ ___",
+      "Representation": [
+        " ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Representative_Docs": [
+        "祝早日康复！",
+        "生活愉快！",
+        "祝一切顺利！"
+      ]
+    },
+    {
+      "Topic": 6,
+      "Count": 48,
+      "Name": "6_5cm_812_ _80",
+      "Representation": [
+        "5cm",
+        "812",
+        " ",
+        "80",
+        "B",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Representative_Docs": [
+        "过度增大的血管瘤手术时期越晚，手术的难度会加大。",
+        "你好，血管瘤的治疗方法很多，应根据肿瘤的类型、部位、深浅及病员的年龄等因素而定。",
+        "5cm)，属于小血管瘤（良性病变）。"
+      ]
+    },
+    {
+      "Topic": 7,
+      "Count": 40,
+      "Name": "7_10_ _B_1",
+      "Representation": [
+        "10",
+        " ",
+        "B",
+        "1",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Representative_Docs": [
+        "您好，孩子10岁，骨龄12.4岁，睾丸大于4ml说明是青春期早发育，遗传身高应该是185cm左右，根据骨龄预测身高是172cm左右，担心孩子矮，建议多锻炼，合理营养。",
+        "10岁开始发育不属于性早熟了。",
+        "男孩，10岁，身高生长缓慢。"
+      ]
+    },
+    {
+      "Topic": 8,
+      "Count": 21,
+      "Name": "8_ ___",
+      "Representation": [
+        " ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Representative_Docs": [
+        "大部分智齿生长是有对称性的，欢迎到我的健康号查看科普帖子“关于智齿的常见问题”；",
+        "您好 拔除智齿其实是不会影响面型的，智齿是长在颌骨里面的，长期偏侧咀嚼会影响面型。",
+        "你好 ，需要公立三级医院口腔科检查智齿情况，有没有发炎，拍口腔全景片看牙齿排列情况，智齿是否长歪了，如果歪了影响正常牙齿就应该拔除。"
+      ]
+    }
+  ],
+  "answer_preview": [
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|EZtaQ99499888|1",
+      "user_id": "EZtaQ99499888",
+      "time_seq": 1,
+      "seq": 1,
+      "answer_create_time": "2019-11-25 10:45:16",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "和之前用药没有关系。怀孕后出血考虑是先兆流产。可以保胎到8周。8周后胎盘形成会分泌孕酮。",
+      "total_sentence_count": 4,
+      "valid_topic_sentence_count": 4,
+      "noise_sentence_count": 0,
+      "noise_sentence_share": 0.0,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 1.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 2.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|MEdJZ73165655|2",
+      "user_id": "MEdJZ73165655",
+      "time_seq": 2,
+      "seq": 2,
+      "answer_create_time": "2019-11-25 10:46:01",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "您好，早孕期阴道出血的原因很难说清楚，一般来说您这个时间段吃的替硝唑对胎儿不会有影响，如果有影响会导致流产，保胎是保不住的。所以别紧张了，只要不再阴道出血和腹痛，定期复查就可以了，祝您健康好孕！",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 1.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 2.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|mXkyu23349543|3",
+      "user_id": "mXkyu23349543",
+      "time_seq": 3,
+      "seq": 3,
+      "answer_create_time": "2019-11-25 10:51:58",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "你好！早孕33天内的用药是全或者无的理论，也就是说如果有影响就会发生流产，不发生产就视为没有影响，你是在35天之前用药，现在有胎芽和胎心搏动，之前的流血考虑是先兆流产，只要没有发生完全流产的情况，建议保留。可以服用保胎药物保胎治疗，做好后面每一步的检查。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 2,
+      "noise_sentence_count": 0,
+      "noise_sentence_share": 0.0,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 1.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 2.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|AXCxa44713121|4",
+      "user_id": "AXCxa44713121",
+      "time_seq": 4,
+      "seq": 4,
+      "answer_create_time": "2019-11-25 10:52:02",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "这种情况还是考虑到体内的黄体，功能不足，子宫的敏感性增加引起的出血，应该跟吃药没有太大的影响。因为那么小的小的，如果吃药对孩子影响，那么是致命的，这个孩子就不会存活，反之，如果成活就说明对孩子没有影响。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 2,
+      "noise_sentence_count": 0,
+      "noise_sentence_share": 0.0,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 1.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 2.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|FQzNd90859000|5",
+      "user_id": "FQzNd90859000",
+      "time_seq": 5,
+      "seq": 5,
+      "answer_create_time": "2019-11-25 10:54:33",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "出血可能是孕激素水平底下，和替硝唑关系不大。建议继续口服黄体酮家，密切观察出血情况。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 1.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 2.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|odYIu60328268|6",
+      "user_id": "odYIu60328268",
+      "time_seq": 6,
+      "seq": 6,
+      "answer_create_time": "2019-11-25 10:56:42",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "您好，很高兴为您解答，中间出血与替硝唑没什么关系，在八至十周孕激素分泌来源从妊娠黄体向胎盘过度时期会有孕酮波动出现少量出血。目前建议继续口服100mg2/日治疗一周。祝您生活愉快！",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 1.0, \"1\": 0.0, \"2\": 0.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 0.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|kYgtM89395438|7",
+      "user_id": "kYgtM89395438",
+      "time_seq": 7,
+      "seq": 7,
+      "answer_create_time": "2019-11-25 11:11:17",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "您好，目前针对您的情况。由于您的服药时间在停经一个月之内，所以药物对孩子的影响是“全或无”的概念。也就是说，如果孩子受到了药物影响，孩子会出现胚胎停育和（或）流产等不良妊娠结局。而如果孩子正常发育，就可以认为这些用药是对孩子没有造成影响的。您的出血可能是有一点流产先兆，目前已经没有出血或腹痛就不要紧。不用太担心，后期有情况密切观察。祝您生活愉快！",
+      "total_sentence_count": 6,
+      "valid_topic_sentence_count": 5,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.16666666666666666,
+      "has_valid_topic": true,
+      "topic_coverage": 2,
+      "topic_distribution_json": "{\"0\": 0.2, \"1\": 0.0, \"2\": 0.8, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 2.0,
+      "dominant_topic_share": 0.8,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|SjBTb102277246|8",
+      "user_id": "SjBTb102277246",
+      "time_seq": 8,
+      "seq": 8,
+      "answer_create_time": "2019-11-25 11:13:29",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "你好，怀孕前30天用的药物对胚胎的影响是全或无。你现在怀孕已经两个月，胎芽胎心正常，应该和所用的替硝唑没有关系，可以不用保胎顺其自然。",
+      "total_sentence_count": 2,
+      "valid_topic_sentence_count": 1,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.5,
+      "has_valid_topic": true,
+      "topic_coverage": 1,
+      "topic_distribution_json": "{\"0\": 0.0, \"1\": 0.0, \"2\": 1.0, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 2.0,
+      "dominant_topic_share": 1.0,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|OdiKw111206375|9",
+      "user_id": "OdiKw111206375",
+      "time_seq": 9,
+      "seq": 9,
+      "answer_create_time": "2019-11-25 11:32:38",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "早期怀孕后出血原因有很多，劳累、孕酮低、孩子自身发育缺陷、外界影响、母亲有全身性疾病等都可能会引起孩子流产现在无出血，超声无异常，化验看一下孕酮值和血hcg值，如果没有问题就好好保胎，以休息为主",
+      "total_sentence_count": 1,
+      "valid_topic_sentence_count": 0,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 1.0,
+      "has_valid_topic": false,
+      "topic_coverage": 0,
+      "topic_distribution_json": NaN,
+      "dominant_topic_id": NaN,
+      "dominant_topic_share": NaN,
+      "fixed_topic_k": 10
+    },
+    {
+      "sample_layer": "flow_run",
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|qhvsw85439898|10",
+      "user_id": "qhvsw85439898",
+      "time_seq": 10,
+      "seq": 10,
+      "answer_create_time": "2019-11-25 11:55:56",
+      "question_text": "医生你好。最后一次月经是9月25号来的，10月8、9号有同房，10月15号到20号服用了一盒替硝唑，48天B超检查有胎心，60天的时候出现了少量出血粉红色，去医院做了B 超说有胎心，然后打了一针黄体酮保胎针和吃了2颗黄体酮胶囊后目前已无出血，请问这是什么原因引起的出血，和之前吃的替硝唑药物影响有关吗？目前已没出血建议继续吃药保胎吗？",
+      "focal_answer_text": "早孕先兆流产，阴道出血可以是激素不稳定导致的，少数和宫颈糜烂或息肉导致。和无关。可保胎至孕10周",
+      "total_sentence_count": 3,
+      "valid_topic_sentence_count": 2,
+      "noise_sentence_count": 1,
+      "noise_sentence_share": 0.3333333333333333,
+      "has_valid_topic": true,
+      "topic_coverage": 2,
+      "topic_distribution_json": "{\"0\": 0.5, \"1\": 0.0, \"2\": 0.5, \"3\": 0.0, \"4\": 0.0, \"5\": 0.0, \"6\": 0.0, \"7\": 0.0, \"8\": 0.0}",
+      "dominant_topic_id": 0.0,
+      "dominant_topic_share": 0.5,
+      "fixed_topic_k": 10
+    }
+  ]
+}

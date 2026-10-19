@@ -1,0 +1,295 @@
+{
+  "run_ts_utc": "2026-09-29T02:56:54+00:00",
+  "scope": "answer_question_only",
+  "input_path": "D:\\medical_research\\data\\staging\\question_answer_joined.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base.parquet",
+  "row_count": 2837042,
+  "checks": {
+    "missing_question_time_rows": 0,
+    "missing_answer_time_rows": 0,
+    "invalid_time_rows": 193,
+    "invalid_time_rate": 6.8e-05,
+    "seq_time_mismatch_rows": 1070008,
+    "seq_time_mismatch_rate": 0.377156,
+    "rows_with_prior_answers": 2558663,
+    "rows_with_prior_answers_rate": 0.901877,
+    "median_answer_delay_hours": 0.576111,
+    "p95_answer_delay_hours": 41.908611
+  },
+  "example_rows": {
+    "invalid_time_examples": [
+      {
+        "question_id": 286861,
+        "seq": 2,
+        "question_create_time": "2018-06-04 16:35:14",
+        "answer_create_time": "2018-06-04 16:05:17",
+        "answer_delay_hours": -0.49916666666666665
+      },
+      {
+        "question_id": 286861,
+        "seq": 3,
+        "question_create_time": "2018-06-04 16:35:14",
+        "answer_create_time": "2018-06-04 16:27:20",
+        "answer_delay_hours": -0.13166666666666665
+      },
+      {
+        "question_id": 289252,
+        "seq": 2,
+        "question_create_time": "2018-06-07 20:52:57",
+        "answer_create_time": "2018-06-07 20:24:35",
+        "answer_delay_hours": -0.4727777777777778
+      },
+      {
+        "question_id": 289364,
+        "seq": 1,
+        "question_create_time": "2018-06-08 15:57:31",
+        "answer_create_time": "2018-06-07 22:39:18",
+        "answer_delay_hours": -17.30361111111111
+      },
+      {
+        "question_id": 289364,
+        "seq": 2,
+        "question_create_time": "2018-06-08 15:57:31",
+        "answer_create_time": "2018-06-07 22:34:54",
+        "answer_delay_hours": -17.376944444444444
+      },
+      {
+        "question_id": 289364,
+        "seq": 3,
+        "question_create_time": "2018-06-08 15:57:31",
+        "answer_create_time": "2018-06-07 22:36:47",
+        "answer_delay_hours": -17.345555555555556
+      },
+      {
+        "question_id": 289364,
+        "seq": 4,
+        "question_create_time": "2018-06-08 15:57:31",
+        "answer_create_time": "2018-06-07 23:20:53",
+        "answer_delay_hours": -16.610555555555557
+      },
+      {
+        "question_id": 290995,
+        "seq": 2,
+        "question_create_time": "2018-06-10 09:13:30",
+        "answer_create_time": "2018-06-10 01:39:09",
+        "answer_delay_hours": -7.5725
+      },
+      {
+        "question_id": 290995,
+        "seq": 3,
+        "question_create_time": "2018-06-10 09:13:30",
+        "answer_create_time": "2018-06-10 03:28:50",
+        "answer_delay_hours": -5.7444444444444445
+      },
+      {
+        "question_id": 290995,
+        "seq": 4,
+        "question_create_time": "2018-06-10 09:13:30",
+        "answer_create_time": "2018-06-10 05:30:52",
+        "answer_delay_hours": -3.7105555555555556
+      },
+      {
+        "question_id": 290995,
+        "seq": 5,
+        "question_create_time": "2018-06-10 09:13:30",
+        "answer_create_time": "2018-06-10 06:22:46",
+        "answer_delay_hours": -2.8455555555555554
+      },
+      {
+        "question_id": 290995,
+        "seq": 6,
+        "question_create_time": "2018-06-10 09:13:30",
+        "answer_create_time": "2018-06-10 06:42:56",
+        "answer_delay_hours": -2.5094444444444446
+      },
+      {
+        "question_id": 290995,
+        "seq": 7,
+        "question_create_time": "2018-06-10 09:13:30",
+        "answer_create_time": "2018-06-10 07:09:38",
+        "answer_delay_hours": -2.0644444444444443
+      },
+      {
+        "question_id": 291816,
+        "seq": 2,
+        "question_create_time": "2018-06-11 12:22:25",
+        "answer_create_time": "2018-06-11 12:03:57",
+        "answer_delay_hours": -0.30777777777777776
+      },
+      {
+        "question_id": 293641,
+        "seq": 2,
+        "question_create_time": "2018-06-13 10:01:13",
+        "answer_create_time": "2018-06-13 09:56:55",
+        "answer_delay_hours": -0.07166666666666667
+      },
+      {
+        "question_id": 297171,
+        "seq": 2,
+        "question_create_time": "2018-06-17 11:28:05",
+        "answer_create_time": "2018-06-17 06:53:55",
+        "answer_delay_hours": -4.569444444444445
+      },
+      {
+        "question_id": 297171,
+        "seq": 3,
+        "question_create_time": "2018-06-17 11:28:05",
+        "answer_create_time": "2018-06-17 07:59:03",
+        "answer_delay_hours": -3.483888888888889
+      },
+      {
+        "question_id": 297649,
+        "seq": 1,
+        "question_create_time": "2018-06-18 15:27:30",
+        "answer_create_time": "2018-06-17 16:39:29",
+        "answer_delay_hours": -22.80027777777778
+      },
+      {
+        "question_id": 297649,
+        "seq": 2,
+        "question_create_time": "2018-06-18 15:27:30",
+        "answer_create_time": "2018-06-17 16:17:57",
+        "answer_delay_hours": -23.159166666666668
+      },
+      {
+        "question_id": 297649,
+        "seq": 3,
+        "question_create_time": "2018-06-18 15:27:30",
+        "answer_create_time": "2018-06-17 18:08:01",
+        "answer_delay_hours": -21.32472222222222
+      }
+    ],
+    "seq_time_mismatch_examples": [
+      {
+        "question_id": 128353,
+        "seq": 1,
+        "observed_seq_by_time": 2,
+        "answer_create_time": "2017-08-30 23:09:24"
+      },
+      {
+        "question_id": 128353,
+        "seq": 2,
+        "observed_seq_by_time": 1,
+        "answer_create_time": "2017-08-30 22:45:41"
+      },
+      {
+        "question_id": 128363,
+        "seq": 1,
+        "observed_seq_by_time": 4,
+        "answer_create_time": "2017-08-31 15:19:56"
+      },
+      {
+        "question_id": 128363,
+        "seq": 2,
+        "observed_seq_by_time": 1,
+        "answer_create_time": "2017-08-30 22:30:15"
+      },
+      {
+        "question_id": 128363,
+        "seq": 3,
+        "observed_seq_by_time": 2,
+        "answer_create_time": "2017-08-30 23:05:47"
+      },
+      {
+        "question_id": 128363,
+        "seq": 4,
+        "observed_seq_by_time": 3,
+        "answer_create_time": "2017-08-31 13:38:43"
+      },
+      {
+        "question_id": 128567,
+        "seq": 1,
+        "observed_seq_by_time": 3,
+        "answer_create_time": "2017-08-31 13:21:26"
+      },
+      {
+        "question_id": 128567,
+        "seq": 2,
+        "observed_seq_by_time": 1,
+        "answer_create_time": "2017-08-31 10:30:57"
+      },
+      {
+        "question_id": 128567,
+        "seq": 3,
+        "observed_seq_by_time": 2,
+        "answer_create_time": "2017-08-31 10:59:31"
+      },
+      {
+        "question_id": 128634,
+        "seq": 1,
+        "observed_seq_by_time": 3,
+        "answer_create_time": "2017-08-31 14:46:00"
+      },
+      {
+        "question_id": 128634,
+        "seq": 2,
+        "observed_seq_by_time": 1,
+        "answer_create_time": "2017-08-31 13:46:41"
+      },
+      {
+        "question_id": 128634,
+        "seq": 3,
+        "observed_seq_by_time": 2,
+        "answer_create_time": "2017-08-31 13:52:32"
+      },
+      {
+        "question_id": 128988,
+        "seq": 1,
+        "observed_seq_by_time": 9,
+        "answer_create_time": "2017-09-01 15:55:10"
+      },
+      {
+        "question_id": 128988,
+        "seq": 2,
+        "observed_seq_by_time": 1,
+        "answer_create_time": "2017-09-01 14:27:29"
+      },
+      {
+        "question_id": 128988,
+        "seq": 3,
+        "observed_seq_by_time": 2,
+        "answer_create_time": "2017-09-01 14:27:55"
+      },
+      {
+        "question_id": 128988,
+        "seq": 4,
+        "observed_seq_by_time": 3,
+        "answer_create_time": "2017-09-01 15:13:16"
+      },
+      {
+        "question_id": 128988,
+        "seq": 5,
+        "observed_seq_by_time": 4,
+        "answer_create_time": "2017-09-01 15:42:36"
+      },
+      {
+        "question_id": 128988,
+        "seq": 6,
+        "observed_seq_by_time": 5,
+        "answer_create_time": "2017-09-01 15:46:01"
+      },
+      {
+        "question_id": 128988,
+        "seq": 7,
+        "observed_seq_by_time": 6,
+        "answer_create_time": "2017-09-01 15:46:48"
+      },
+      {
+        "question_id": 128988,
+        "seq": 8,
+        "observed_seq_by_time": 7,
+        "answer_create_time": "2017-09-01 15:49:27"
+      }
+    ]
+  },
+  "notes": [
+    "This step checks whether answer_create_time is not earlier than question_create_time.",
+    "This step checks whether seq matches the within-question order implied by answer_create_time.",
+    "This step constructs only prior-answer indexing fields and does not perform text cleaning yet."
+  ],
+  "outputs": {
+    "analysis_base_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base.parquet",
+    "invalid_time_sample_path": "D:\\medical_research\\outputs\\audit\\05_invalid_time_samples.csv",
+    "invalid_time_exported_rows": 193
+  }
+}

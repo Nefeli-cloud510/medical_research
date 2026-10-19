@@ -1,0 +1,462 @@
+{
+  "run_ts_utc": "2026-10-07T11:31:09+00:00",
+  "input_knowledge_path": "D:\\medical_research\\data\\analysis\\flow_run100_knowledge_metrics_bge.parquet",
+  "input_answer_path": "D:\\medical_research\\data\\analysis\\flow_run100_answer_text_features.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\flow_run100_knowledge_metrics_bge.parquet",
+  "topic_info_path": "D:\\medical_research\\outputs\\tables\\20g_flow_run100_bertopic_topic_info.csv",
+  "algorithm": {
+    "topic_model": "BERTopic",
+    "embedding_model": "BAAI/bge-base-zh-v1.5",
+    "embedding_model_source_used": "D:\\medical_research\\models\\bge-base-zh-v1.5",
+    "device_used": "cpu",
+    "document_unit": "回答级 answer_text",
+    "dimensionality_reduction_model": "TruncatedSVD(n_components=5)",
+    "cluster_model": "KMeans(n_clusters=12)",
+    "same_timestamp_rule": "同时间戳回答不互为前序，先计算后统一加入前序主题历史。",
+    "prior_entropy_formula": "-sum_k p_k ln p_k",
+    "topic_diff_formula": "Jensen-Shannon divergence between current one-hot topic vector and prior valid-topic distribution",
+    "outlier_handling": "若主题模型产生 -1，则视为离群回答并排除在前序主题熵之外；本次 KMeans 配置通常不会产生 -1。",
+    "manual_topic_merge_applied": false
+  },
+  "topic_model_counts": {
+    "document_count": 859,
+    "valid_topic_count_global": 12,
+    "outlier_document_count": 0
+  },
+  "prior_entropy_distribution": {
+    "valid_rows": 759,
+    "mean": 0.7068750554903761,
+    "median": 0.6870920273799715,
+    "p75": 1.0205286393859627,
+    "max": 1.9730014063936128
+  },
+  "topic_diff_distribution": {
+    "valid_rows": 759,
+    "mean": 0.35799051260779313,
+    "median": 0.3182570841474064,
+    "p75": 0.6931471805599452,
+    "max": 0.6931471805599455
+  },
+  "topic_diff_missing_reason_distribution": [
+    {
+      "reason": "[valid]",
+      "row_count": 759
+    },
+    {
+      "reason": "no_strict_prior",
+      "row_count": 100
+    }
+  ],
+  "topic_info_preview": [
+    {
+      "Topic": 0,
+      "Count": 112,
+      "Name": "0_ _B_HCG_3",
+      "Representation": [
+        " ",
+        "B",
+        "HCG",
+        "3",
+        "10",
+        "2",
+        "pet",
+        "812",
+        "DNA",
+        "A"
+      ],
+      "Representative_Docs": [
+        "1.你是高危型HPV31 .51感染。这个是引起宫颈癌前病变的原因。2.宫颈t ct检查是不能明确意义的，非典型性鳞状细胞增生。也就是癌前病变。3.需要阴道镜下活检，明确诊断。有可能出现三种情况，一个就是慢性宫颈炎，定期复查就可以。另一个是低级别的癌前病变，这个一般60%一年左右就自然消退了，一年以后再复查，如果还是低级别的话，可以激光冷冻或者微波治疗。还有一个就是高级别的癌前病变需要行宫颈锥切。",
+        "根据体检巨块型宫颈癌 并累及阴道壁下三分之一 Pet提示淋巴转移可能 诊断考虑3期 晚期宫颈癌 首先选择同步放化疗",
+        "宫颈癌诊断明确，但并没有远处转移，只能说是局部晚期       做3次化疗再综合评估看看能否手术治疗，不能手术就同步放化疗"
+      ]
+    },
+    {
+      "Topic": 1,
+      "Count": 111,
+      "Name": "1_ _2_123_1",
+      "Representation": [
+        " ",
+        "2",
+        "123",
+        "1",
+        "24",
+        "CT",
+        "pet",
+        "36",
+        "11",
+        "23"
+      ],
+      "Representative_Docs": [
+        "第一，已经发生的萎缩和肠化，很难逆转，幽门螺旋杆菌感染是疾病发生的重要原因，根除幽门螺旋杆菌可延缓疾病进展，建议停药四周后复查呼气呼气验查，明确是否治疗成功，若未成功，需补救治疗。 第二，萎缩性胃炎，肠化生需要定期复查胃镜，推荐一到两年一次，发现疾病进展可行内镜下胃黏膜剥离术，微创治疗。 第三，建议查胃泌素17，胃蛋白酶原，壁细胞抗体，胃酸检测，细胞抗体，内因子抗体检查评估胃黏膜，功能状态。五肽胃泌素试验查看胃酸分泌高低，明确是低酸，可以补充治疗，如果高酸建议继续应用抑酸酸药。 第四，建议用铝碳酸镁中和胆汁，替普瑞酮保护胃黏膜，促进粘膜修复。 第五，能明确是低酸或无胃酸，或者胃体萎缩，轻中度患者可注射五肽胃泌素治疗，有效促进腺体修复。",
+        "你好 ，需要公立三级医院口腔科检查智齿情况，有没有发炎，拍口腔全景片看牙齿排列情况，智齿是否长歪了，如果歪了影响正常牙齿就应该拔除。",
+        "你好，慢性脂溢性脱发与精神因素有关者，首先要解除压力 负担，保持心情开朗，劳逸结合，以有利于头发的生长达到治疗慢性脂溢性脱发的效果。慢性脂溢性脱发与感染病灶和内分泌功能失调有关者，应去除感染病灶和纠正内分泌功能失调，从而有了于慢性脂溢性脱发的治疗。生活作息应规律、睡眠充足、减少心理压力，这样可以达到慢性脂溢性脱发的治疗，可以去当地三甲医院皮肤科中药调理。"
+      ]
+    },
+    {
+      "Topic": 2,
+      "Count": 91,
+      "Name": "2_ _1_10_B",
+      "Representation": [
+        " ",
+        "1",
+        "10",
+        "B",
+        "3",
+        "2",
+        "DNA",
+        "HCG",
+        "80",
+        "6"
+      ],
+      "Representative_Docs": [
+        "您好，小耳畸形主要是听力和耳廓外形的问题。 您没有检查结果。估计您的听力也不好。 手术一方面是耳廓成型，一方面是听力重建。 所以费用不好说，一般一个耳朵在三四万左右，各地情况稍有差别。术后听力恢复情况因人而异。术后需要复诊。 关于费用，可以报销。您的年龄偏大，一些国家扶助项目用不上，但也有一些能申请，比如先天性结构畸形救助项目。每个省都有定点医院，你那里怎么的。我记得安徽有医科大学一附院、二附院、省儿童医院、省立医院、蚌埠医学院一附院、宿州市立医院、安庆市立医院、阜阳市人民医院、皖南医学院戈矶山医院。 您可以申请一下。 总之。1.建议您手术治疗，具体手术方式要完善相关检查后决定。 2.您可以到当地定点医院问一下。一是医保可以报销，二是有国家项目可以资助。 祝您早日康复。",
+        "您好，很高兴为您解疑答惑。根据您的描述，结合图片(不太清楚)，这个副作用不大。初步 指导意见:1.清淡饮食，忌食辛辣食物。 2.注意休息，保持充足的睡眠，少熬夜。 3.手术治疗。 ★如果您对我本次咨询服务满意，请在咨询结束后根据系统提示做出评价。希望为您的采纳带来帮助，祝您早日康复！",
+        "你好。你有hpv 感染，是高危型别，是宫颈癌的高危因素。检查方法做的正确。待活检结果吧。       活检报告可能如下情况1，没问题，8-10个月复查。2,cin1 可以做keep,也可以观察6个月，如有进展再处理。3，cin2或3，直接leep， 严重的做宫颈锥切。 4，再严重，万一，我说万一是早浸癌，就得做广切。"
+      ]
+    },
+    {
+      "Topic": 3,
+      "Count": 88,
+      "Name": "3_ _CT_2_1",
+      "Representation": [
+        " ",
+        "CT",
+        "2",
+        "1",
+        "12",
+        "812",
+        "15",
+        "26",
+        "3C1",
+        "ct"
+      ],
+      "Representative_Docs": [
+        "血压正常。。没必要处理。。。。  微量吃21金维他就可以了。。。。。。",
+        "胸膜转移最好的治疗方法就是胸腔灌注化疗，紫杉醇、铂类都可以       副作用不外呼骨髓抑制、消化道反应、胸膜粘连、包裹性积液等。有失必有得，有得必有失，患得患失什么也做不了。家属配合医生治疗就可以了",
+        "肠道不准备好没有办法做肠镜的啊，口服聚乙二醇不能排便 考虑对聚乙二醇反应不好，应该换一种清肠药比如硫酸镁或者彼利使。"
+      ]
+    },
+    {
+      "Topic": 4,
+      "Count": 75,
+      "Name": "4_ _2_10_123",
+      "Representation": [
+        " ",
+        "2",
+        "10",
+        "123",
+        "CT",
+        "12",
+        "B",
+        "",
+        "",
+        ""
+      ],
+      "Representative_Docs": [
+        "虽然是脑鸣 但需要去医院耳鼻喉科检查 由医生做出诊断 然后实施治疗",
+        "复查鼻内窥镜检查 做喉镜检查 必要的话需要手术解除鼻子阻塞情况",
+        "一，脑鸣的原因多与血管和和精神有关。 二，神经递质紊乱只是伴随表现，不是原因。"
+      ]
+    },
+    {
+      "Topic": 5,
+      "Count": 66,
+      "Name": "5_ _12_B_A",
+      "Representation": [
+        " ",
+        "12",
+        "B",
+        "A",
+        "b",
+        "5",
+        "6",
+        "123",
+        "4",
+        "3"
+      ],
+      "Representative_Docs": [
+        "从照片看都是红色丘疹表现，不知道是否瘙痒，有没有发烧？ 如果没有发烧表现，单纯性红色丘疹伴瘙痒，考虑是丘疹性荨麻疹，过敏引起的皮肤炎症。可以外用炉甘石洗剂每日多次。忌口海鲜羊肉韭菜香菜等发物。不要积食。 如果有发烧需要去医院看看有没有水痘情况。",
+        "你就应该考虑是局部有淋巴结肿大， 首先你看一下头部的皮肤有没有哪里有破掉，有没有局部的感染。 跟蚊子咬应该是没有直接的关联。如果没有特别短期内变大，可以观察。 如果有变大变多或者伴有发热，就要到医院里面看一下。",
+        "从你提供的资料上看，孩子这种情况考虑湿疹的可能性比较大，湿疹是一种与过敏因素有关的疾病，如果是母乳喂养的话，大人应该忌口牛羊肉，海鲜，坚果及辛辣刺激性的食物，如果是奶粉喂养的话，可以考虑应用氨基酸奶粉。 头皮处可以用一些弱的激素软膏如派瑞松，面部可以应用炉甘石外用，症状缓解后，局部应用保湿霜如肤乐霜或薇诺娜保湿霜保湿"
+      ]
+    },
+    {
+      "Topic": 6,
+      "Count": 65,
+      "Name": "6_ _123_12_B",
+      "Representation": [
+        " ",
+        "123",
+        "12",
+        "B",
+        "36",
+        "3",
+        "MR",
+        "23",
+        "24",
+        ""
+      ],
+      "Representative_Docs": [
+        "夜间尿频 应该考虑前列腺疾病可能 但不排除因睡眠不佳导致的尿频建议去检查一下前列腺超声和前列腺液 如明确病因后再治疗更可靠 不过不需要过度紧张",
+        "你这个情况考虑是腰椎间盘外耳道感染肉芽增生 乳突炎，建议你去医院手术清理肉芽，抗生素治疗就好了",
+        "去医院检查一下看看是否是海绵体受损后导致的异常如是疤痕性损伤 可以行手术治疗 切除疤痕组织"
+      ]
+    },
+    {
+      "Topic": 7,
+      "Count": 60,
+      "Name": "7_20_ _30_1",
+      "Representation": [
+        "20",
+        " ",
+        "30",
+        "1",
+        "4",
+        "3",
+        "10",
+        "2",
+        "13",
+        "11"
+      ],
+      "Representative_Docs": [
+        "患者为女性，1岁，儿童，像个淋巴结，淋巴结肿大可见于如下疾病，1.感染：由致病微生物引起的急慢性炎症。 2.肿瘤：如淋巴瘤、各型急慢性白血病、浆细胞肿瘤、多发性骨髓瘤等。 3.反应性增生：如坏死性增生性淋巴结病、血清病及血清病样反应、变应性亚败血症、系统性红斑狼疮风湿病等。 4.细胞增生代谢异常：如朗格汉斯细胞组织细胞增生症、脂质沉积病、结节病等。针对淋巴结肿大的原因进行治疗。即对细菌、病毒、结核菌、癌细胞等针对性用药。抗菌药物、抗病毒药物、激素、抗结核药、放化疗等。如果增大淋巴结肿大明显，可行穿刺活检，以进一步明确诊断及治疗，必要时行淋巴结摘除，送检术中快速病理，明确诊断及治疗。平时注意休息，保证睡眠，戒烟戒酒，忌辛辣食物，适量运动，心情舒畅。",
+        "您好，很高兴为您解疑答惑。根据您的描述，结合图片(不太清楚)，初步考虑牛皮癣。 指导意见:1.清淡饮食，忌食辛辣食物。 2.注意休息，保持充足的睡眠，少熬夜。 3.忌热水烫洗，少搔抓。 4.防晒 5.西替利嗪分散片，1片，每晚一次，维生素C  1片，一日3次。 6.丁酸氢化可的松软膏外用，一日2次 7.中药  苦参30   黄柏20  白藓皮 20   百部30  野菊花 20      甘草 10   煎水冼，一日一次。 ★建议您上传一张清晰图片，若病情加重请及时去当地医院就诊，具体用药以及治疗方法和剂量以当面医生确定为主。 ★如果您对我本次咨询服务满意，请在咨询结束后根据系统提示做出评价。希望为您的采纳带来帮助，祝您早日康复！",
+        "您好，很高兴为您解疑答惑。根据您的描述，初步考虑假性湿疣，不要紧的。 指导意见:1.清淡饮食，忌食辛辣食物。 2.注意休息，保持充足的睡眠，少熬夜。 3.忌热水烫洗，少搔抓。 4.中药  苦参30   黄柏20  白藓皮 20   百部30  野菊花 20      甘草 10   煎水冼，一日一次。 ★建议您上传一张清晰图片，若病情加重请及时去当地医院就诊，具体用药以及治疗方法和剂量以当面医生确定为主。 ★如果您对我本次咨询服务满意，请在咨询结束后根据系统提示做出评价。希望为您的采纳带来帮助，祝您早日康复！"
+      ]
+    },
+    {
+      "Topic": 8,
+      "Count": 59,
+      "Name": "8_ _4_1_5",
+      "Representation": [
+        " ",
+        "4",
+        "1",
+        "5",
+        "B",
+        "7",
+        "2",
+        "12",
+        "26",
+        "15"
+      ],
+      "Representative_Docs": [
+        "您好，非常荣幸为您解答问题，不要着急，我们大家一起帮您想办法！ 根据您描述的情况，给您如下意见供参考！  膝关节髌骨软骨软化症可能，磁共振报告单描述的问题不需要处理，很多人都有这种情况。 给出如下意见 1、建议继续休养，对症治疗为主，建议饮食控制体重，避免肥胖 2、6个月内不建议做竞技类的运动，比如长跑，马拉松，爬山，快速的上台阶， 2、膝关节建议热敷，热水袋，热毛巾都可以，每次五分钟，每天三次，水温40度左右，避免烫伤，局部热敷可以改善血液循环，有利于无菌性炎症的吸收与代谢 3、如果膝关节有疼痛，可以口服非甾体类抗炎药，比如60mg每日一次，连续服用5到10天，注意胃肠道不良反应，购买和使用前请仔细阅读药品使用说明书，看有无相关禁忌 4、关于改善现有的症状，可以进行股四头肌等长收缩功能锻炼，目的是强化膝关节周围核心肌肉的肌力，增加膝关节的稳定性，避免慢性损伤和因为损伤后运动量不足，出现的股四头肌萎缩 5、日常生活中不建议深蹲和负重深蹲 6、如果通过上述治疗，膝关节的症状完全消失和痊愈就这样，如果超过3个月，症状无缓解，或者右腿症状进行性加重，有必要到医院接受医生查体，必要时检查膝关节磁共振排除半月板损伤或者髌骨轨迹不良 7、不建议中医中药治疗，不建议针灸按摩推拿拔罐儿，不建议口服氨基葡萄糖胶囊  祝您及家人身体健康，生活幸福，再次感谢您对微医健康平台的信任，希望我的建议对您有帮助！",
+        "你好！你的情况及核磁共振检查结果来看，考虑是膝关节骨性关节炎，主要是髌股关节面软骨损伤。我从专业医生的角度建议如下：1、保护关节： 应限制关节负重活动，减少上下楼和爬山，避免蹲着干活。避免过久站立或长距离步行，可使用以减轻受累关节负荷;体重超标者宜减轻体重;要注意患病关节保暖，避风寒; 严重时可短期卧床休息，完全制动。  2、提高防范意识：我们应该了解该病的危害性及早期治疗的重要性，控制体重，关节处保暖，避免受伤，同时要树立战胜疾病的信心。  3、功能锻炼：合理的锻练可恢复肌肉收缩力，关节灵活度和防治骨质疏松，不合理的锻练则会增加关节负荷，引起软骨的进一步损伤，从而加重临床症状。常常可以见到有些患者盲目地进行走长路、跳迪斯科，甚至 跑步、爬山等不适的锻练后症状加重。建议常做勾紧脚尖绷直膝盖的直抬腿锻炼。  4、局部理疗：急性期关节发热，肿胀宜先进行局部冷敷，退热消肿后可应用热敷。慢性期还可应用红外线、超短波、针灸、蜡疗、按摩等。中医的传统疗法如中药熏洗、推拿、针灸、小针刀治疗等通过长期的实践证明也是非常有效的方法。  5、药物治疗：常用的由依托考昔、西乐葆等特异性COX-2抑制剂，胃肠道刺激小，止痛效果良好，一般建议饭后服。口服氨基葡萄糖可以改善软骨代谢，延缓关节炎的发展，常用的有奥泰灵，一般每日1500mg，分2-3餐饭前饭后服用均可，安全性高，很少出现副作用，一般疗程6-8周。  如果上述治疗效果不好，可以考虑关节腔注射玻璃酸钠注射液，一周1次，连续注射5次，多数人也能获得很好的效果。",
+        "你好，从片子看可以保守治疗一个月看一下，效果不错，具体的方法如下。腰间盘突出注意事项及其治疗：1、要坚持锻炼和坚持休息相结合，休息要采用平躺的姿势，多休息，不要提重物 2、平时不要弯腰太猛烈，系鞋带或者拿东西等等需要弯腰时一定要先蹲下去再慢慢起来。 3、平时不要长久坐着，坐久了就起来活动活动。 4、有时间的话可以倒着走，这样对腰椎间盘突出很管用的，但是一定要坚持。 5、平时不要睡软床，要睡稍微硬点的床。6、可以口服腰痛宁胶囊或者腰痹通胶囊，西乐葆，外用吡罗昔康贴或者治疗，平时佩戴腰围保护。7、不要久坐久站和弯腰提物，腰部按摩热敷，理疗，针炙均有缓解作用。祝早日康复！"
+      ]
+    },
+    {
+      "Topic": 9,
+      "Count": 48,
+      "Name": "9_ _CT_MR_3",
+      "Representation": [
+        " ",
+        "CT",
+        "MR",
+        "3",
+        "23",
+        "ct",
+        "24",
+        "B",
+        "2",
+        "1"
+      ],
+      "Representative_Docs": [
+        "目前你感觉是不是还是跳三四下就停一下呢  如果还是这样  建议您还是去一趟医院  去心内科看一下  如果比之前好了不少  没有那么多早搏的话  就有可能跟你活动、交感神经兴奋有关  等你平静下来的话  可能就会好转  如果还是之前那样  或者加重的话  就需要去心内科看一下呢",
+        "这种情况应该是前列腺炎引起的尿频  导致夜间睡觉差  但也不能排除膀胱炎建议做尿液分析  前列腺液常规  泌尿系B超",
+        "一，你说的这种情况最好看骨科专家。摄片检查骨关节。明确诊断才好治疗。 二，服用扶他林片一次，一片一天一次，可以减轻疼痛。"
+      ]
+    },
+    {
+      "Topic": 10,
+      "Count": 45,
+      "Name": "10_80_ _CT_13",
+      "Representation": [
+        "80",
+        " ",
+        "CT",
+        "13",
+        "IgE",
+        "1",
+        "123",
+        "24",
+        "12",
+        ""
+      ],
+      "Representative_Docs": [
+        "病史资料已看 有过敏性咳嗽可能。另需除外合并抽动症可能。建议小儿神经内科就诊。除外抽动症。",
+        "80天宝宝，母乳喂养，奶量减少，大便中带有粘状物，伴咳嗽，考虑有肺部炎症，建议上医院让医生检查肺部，有无啰音？必要时给予抗感染治疗！",
+        "80天孩子，母乳喂养，突然出现吃奶量减少。这两天白天不吃，大便有粘液。还咳嗽几声，容易呛奶。睡眠精神状态还好。根据上述信息孩子很有可能是有点消化不好或者是有点小感冒。建议家长不用过度担心。继续观察就可以。不需要做过多的处理。可以给孩子适当喝点水，让孩子多排尿。帮助机体回复。"
+      ]
+    },
+    {
+      "Topic": 11,
+      "Count": 39,
+      "Name": "11_IgE_ _5_7",
+      "Representation": [
+        "IgE",
+        " ",
+        "5",
+        "7",
+        "24",
+        "12",
+        "1",
+        "",
+        "",
+        ""
+      ],
+      "Representative_Docs": [
+        "干咳无痰、平躺/夜间加重，冷刺激可诱发，3-5个月，抗生素无效，这些咳嗽性质的确符合气道高反应性咳嗽的特征。建议：1、胸部的CT影像学检查，目的是排除其他肺部可以引起慢性咳嗽的疾病。2、肺功能检查，需要包括通气功能、呼出气一氧化碳含量（FeNo）、气道阻力、强迫肺震荡、舒张试验或激发试验，目的是确认有无气道高反应性、嗜酸性粒细胞支气管炎、咳嗽变异性哮喘等可能。3、血液检测：EOS、总IgE测定、外周血过敏源IgE筛查，目的是查一查是否过敏因素。4、是否有高血压并服用药物降血压？如有，建议仔细检查降压药说明书，如有引起咳嗽、气短、气道痉挛等副作用则必须停用。5、是否有胃部疾病史和消化不良表现，包括泛酸、嗳气、易打嗝、胃部灼热、饱涨不适等问题。如有，建议消化科就诊治疗，以减少胃酸过多且返流导致的食道-气道神经反射性异常增强，进而导致咳嗽症状。6、是否有鼻塞鼻涕喷嚏等过敏性鼻炎症状，以及鼻涕后流入咽部的感觉。如有，建议同时治疗过敏性鼻炎。7、如以上检查皆无异常，以上疾病都可以排除，建议气管镜检查，目的是排除气道内某些良恶性疾病所致，如异物阻塞、气道结核、气道良性和恶性肿瘤导致的咳嗽。",
+        "你好，根据化验报告，目前没有感染指征。孩子用IgE高，时有清嗓子，时有咳嗽，不排除过敏性的原因。可以配合抗阻胺类的药物或者雾化吸入对症治疗。饮食上建议不吃辛辣刺激食物和奶油，巧克力，饮料，甜点等食物。",
+        "你好，孩子这个情况要注意下可能是抽动症。建议去儿童保健科看下，此外过敏性咽炎的情况也要注意，IgE这么高。"
+      ]
+    }
+  ],
+  "preview": [
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|EZtaQ99499888|1",
+      "time_seq": 1,
+      "bertopic_topic_id_answer": 0,
+      "bertopic_topic_name_answer": "0_ _B_HCG_3",
+      "topic_prior_valid_answer_count_bertopic": 0,
+      "topic_prior_outlier_ratio_bertopic": NaN,
+      "topic_prior_entropy_bertopic": NaN,
+      "topic_knowledge_diff_bertopic_jsd": NaN,
+      "topic_knowledge_diff_bertopic_missing_reason": "no_strict_prior"
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|MEdJZ73165655|2",
+      "time_seq": 2,
+      "bertopic_topic_id_answer": 2,
+      "bertopic_topic_name_answer": "2_ _1_10_B",
+      "topic_prior_valid_answer_count_bertopic": 1,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": -0.0,
+      "topic_knowledge_diff_bertopic_jsd": 0.6931471805599453,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|mXkyu23349543|3",
+      "time_seq": 3,
+      "bertopic_topic_id_answer": 2,
+      "bertopic_topic_name_answer": "2_ _1_10_B",
+      "topic_prior_valid_answer_count_bertopic": 2,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6931471805599453,
+      "topic_knowledge_diff_bertopic_jsd": 0.21576155433883565,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|AXCxa44713121|4",
+      "time_seq": 4,
+      "bertopic_topic_id_answer": 0,
+      "bertopic_topic_name_answer": "0_ _B_HCG_3",
+      "topic_prior_valid_answer_count_bertopic": 3,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6365141682948128,
+      "topic_knowledge_diff_bertopic_jsd": 0.3182570841474064,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|FQzNd90859000|5",
+      "time_seq": 5,
+      "bertopic_topic_id_answer": 0,
+      "bertopic_topic_name_answer": "0_ _B_HCG_3",
+      "topic_prior_valid_answer_count_bertopic": 4,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6931471805599453,
+      "topic_knowledge_diff_bertopic_jsd": 0.21576155433883565,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|odYIu60328268|6",
+      "time_seq": 6,
+      "bertopic_topic_id_answer": 2,
+      "bertopic_topic_name_answer": "2_ _1_10_B",
+      "topic_prior_valid_answer_count_bertopic": 5,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6730116670092565,
+      "topic_knowledge_diff_bertopic_jsd": 0.27435846855026524,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|kYgtM89395438|7",
+      "time_seq": 7,
+      "bertopic_topic_id_answer": 2,
+      "bertopic_topic_name_answer": "2_ _1_10_B",
+      "topic_prior_valid_answer_count_bertopic": 6,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6931471805599453,
+      "topic_knowledge_diff_bertopic_jsd": 0.21576155433883565,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|SjBTb102277246|8",
+      "time_seq": 8,
+      "bertopic_topic_id_answer": 2,
+      "bertopic_topic_name_answer": "2_ _1_10_B",
+      "topic_prior_valid_answer_count_bertopic": 7,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6829081047004717,
+      "topic_knowledge_diff_bertopic_jsd": 0.17812578678027957,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|OdiKw111206375|9",
+      "time_seq": 9,
+      "bertopic_topic_id_answer": 0,
+      "bertopic_topic_name_answer": "0_ _B_HCG_3",
+      "topic_prior_valid_answer_count_bertopic": 8,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6615632381579821,
+      "topic_knowledge_diff_bertopic_jsd": 0.290304755476254,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|qhvsw85439898|10",
+      "time_seq": 10,
+      "bertopic_topic_id_answer": 0,
+      "bertopic_topic_name_answer": "0_ _B_HCG_3",
+      "topic_prior_valid_answer_count_bertopic": 9,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6869615765973234,
+      "topic_knowledge_diff_bertopic_jsd": 0.24736145797692088,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|rPxJE83420731|11",
+      "time_seq": 11,
+      "bertopic_topic_id_answer": 0,
+      "bertopic_topic_name_answer": "0_ _B_HCG_3",
+      "topic_prior_valid_answer_count_bertopic": 10,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6931471805599453,
+      "topic_knowledge_diff_bertopic_jsd": 0.21576155433883565,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    },
+    {
+      "question_id": "101404220757966848",
+      "event_id": "101404220757966848|RDZGe106856261|12",
+      "time_seq": 12,
+      "bertopic_topic_id_answer": 0,
+      "bertopic_topic_name_answer": "0_ _B_HCG_3",
+      "topic_prior_valid_answer_count_bertopic": 11,
+      "topic_prior_outlier_ratio_bertopic": 0.0,
+      "topic_prior_entropy_bertopic": 0.6890092384766586,
+      "topic_knowledge_diff_bertopic_jsd": 0.19145526997788764,
+      "topic_knowledge_diff_bertopic_missing_reason": ""
+    }
+  ]
+}

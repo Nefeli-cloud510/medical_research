@@ -1,0 +1,35 @@
+{
+  "run_ts_utc": "2026-10-06T08:06:37+00:00",
+  "scope": "major5_text_cleaning_seq_clean",
+  "input_path": "D:\\medical_research\\data\\analysis\\major5_text_cleaning_prep.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\major5_text_cleaning_prep_seq_clean.parquet",
+  "row_counts": {
+    "original_rows": 2367171,
+    "output_rows": 2367171
+  },
+  "dropped_columns": [
+    "gender",
+    "age",
+    "address",
+    "is_same_doctor_multi_answer_in_question",
+    "is_doctor_first_answer_in_question",
+    "is_doctor_followup_answer_in_question"
+  ],
+  "ordering_explanation": {
+    "recommended_field_for_within_question_time_order": "time_seq",
+    "sort_order_applied": [
+      "question_id",
+      "time_seq",
+      "answer_create_time",
+      "seq"
+    ],
+    "time_seq_definition": "按同一 question_id 内的 answer_create_time 从早到晚重新排序后的位次。",
+    "observed_seq_by_time_definition": "历史审计别名字段，当前实现中与 time_seq 完全相同。",
+    "time_seq_equals_observed_seq_by_time": true,
+    "recommendation": "后续所有题内先后顺序、前序回答集合、文本模板构造统一看 time_seq，不再以 observed_seq_by_time 作为主字段。"
+  },
+  "column_audit": {
+    "original_column_count": 44,
+    "output_column_count": 38
+  }
+}

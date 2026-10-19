@@ -1,0 +1,19 @@
+field_name,distinct_type_count,types,explaination,files
+question_id,1,int64,例：100002518649569281，标定每条问题的唯一字段；question的主键，answer的外键,data/raw/answer.parquet|data/raw/question.parquet
+user_id,1,large_string,回答医生的平台账号id，唯一标定每位医生,data/raw/answer.parquet
+tech_title,1,large_string,例：主治医师，每位医生的职称,data/raw/answer.parquet
+dept,1,large_string,例：消化内科，每位医生所属的领域,data/raw/answer.parquet
+hospital,1,large_string,每位医生的所属医院/单位,data/raw/answer.parquet
+answer,1,large_string,具体作答的文本内容,data/raw/answer.parquet
+create_time,1,timestamp[us],回复/提问发布的具体时间,data/raw/answer.parquet|data/raw/question.parquet
+thumb,1,int64,每条回答获得的点赞数,data/raw/answer.parquet
+help_status,1,int64,高置信推断：回答的帮助/推荐状态编码；0大概率为普通回答，1/2为被平台或用户标记为更有帮助的回答状态，建议后续抽样回源页面再核验编码定义,data/raw/answer.parquet
+seq,1,int64,同一 question_id 下回答的顺序号/楼层号（从1开始），可用于识别首答与回答位次,data/raw/answer.parquet
+gender,1,large_string,男/女，存在NULL值,data/raw/question.parquet
+age,1,int64,存在NULL值,data/raw/question.parquet
+address,1,large_string,省/市 级，直辖市则精确到市,data/raw/question.parquet
+question_desc,1,large_string,字符串，具体问题的描述，呈现口语化特征，标点符号问号居多，符合问题的特征,data/raw/question.parquet
+tags,1,large_string,例：亲子育儿、咳嗽、感冒等，为具体症状/疾病的标签,data/raw/question.parquet
+bounty,1,double,问题悬赏金额/付费提问金额；微医问答存在用户提问悬赏与最佳回答取赏机制,data/raw/question.parquet
+views,1,int64,问题页面浏览量（PV/点击访问量），反映问题曝光度,data/raw/question.parquet
+ans_count,1,int64,本条问题下回答的数量,data/raw/question.parquet

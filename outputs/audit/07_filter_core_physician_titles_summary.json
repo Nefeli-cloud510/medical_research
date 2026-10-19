@@ -1,0 +1,64 @@
+{
+  "run_ts_utc": "2026-10-05T13:38:58+00:00",
+  "scope": "answer_question_only",
+  "input_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid.parquet",
+  "output_path": "D:\\medical_research\\data\\analysis\\focal_answer_panel_base_time_valid_core_physician_titles.parquet",
+  "validation": {
+    "tech_title_is_single_value_per_row": true,
+    "rows_with_delimiter_in_tech_title": 0
+  },
+  "filter_rule": {
+    "keep_titles": [
+      "副主任医师",
+      "主治医师",
+      "主任医师",
+      "住院医师",
+      "医师"
+    ],
+    "drop_other_titles": true
+  },
+  "row_counts": {
+    "original_rows": 2836849,
+    "filtered_rows": 2748748,
+    "dropped_rows": 88101,
+    "drop_rate": 0.031056,
+    "keep_rate": 0.968944
+  },
+  "title_counts_before": {
+    "副主任医师": 1076374,
+    "主治医师": 830548,
+    "主任医师": 614441,
+    "住院医师": 201354,
+    "医师": 26031,
+    "": 23685,
+    "主管护师": 14894,
+    "助理医师": 13762,
+    "副主任中医师": 10378,
+    "主任中医师": 10327,
+    "主治中医师": 8127,
+    "护士": 3913,
+    "副主任护师": 1587,
+    "护师": 1055,
+    "二级心理咨询师": 147,
+    "治疗师": 63,
+    "三级心理咨询师": 61,
+    "主管检验师": 26,
+    "主管药师": 22,
+    "主管技师": 15,
+    "普通门诊": 10,
+    "助产士": 8,
+    "主任护师": 5,
+    "主任技师": 5,
+    "副主任技师": 4,
+    "二级营养师": 3,
+    "副主任药师": 3,
+    "药师 ": 1
+  },
+  "title_counts_after": {
+    "副主任医师": 1076374,
+    "主治医师": 830548,
+    "主任医师": 614441,
+    "住院医师": 201354,
+    "医师": 26031
+  }
+}

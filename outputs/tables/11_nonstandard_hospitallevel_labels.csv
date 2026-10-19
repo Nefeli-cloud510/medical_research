@@ -1,0 +1,12 @@
+﻿hospitallevel,row_count,row_share,distinct_hospital_count,distinct_hospital_share,is_standard_label,label_type
+一级医院,151205,0.055009,453,0.087638,False,nonstandard_or_unmatched
+UNMATCHED,133071,0.048411,547,0.105823,False,nonstandard_or_unmatched
+三级医院,53597,0.019499,243,0.047011,False,nonstandard_or_unmatched
+二级医院,29358,0.01068,101,0.01954,False,nonstandard_or_unmatched
+其他,7310,0.002659,33,0.006384,False,nonstandard_or_unmatched
+对外综合,4322,0.001572,7,0.001354,False,nonstandard_or_unmatched
+县级甲等疾控中心,313,0.000114,1,0.000193,False,nonstandard_or_unmatched
+对外专科,138,5e-05,3,0.00058,False,nonstandard_or_unmatched
+二级甲等（已晋升三级）,128,4.7e-05,4,0.000774,False,nonstandard_or_unmatched
+二级甲等→已升三级,61,2.2e-05,1,0.000193,False,nonstandard_or_unmatched
+一级社区卫生服务中心,1,0.0,1,0.000193,False,nonstandard_or_unmatched
