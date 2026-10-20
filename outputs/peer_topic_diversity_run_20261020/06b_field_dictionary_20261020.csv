@@ -1,0 +1,18 @@
+﻿field_name,field_name_zh,definition_or_formula,missing_rule
+question_id,问题ID,字符串保留；同一问题内构造严格前序集合。,无缺失。
+event_id,回答事件ID,question_id|user_id|time_seq，字符串保留；回答级唯一键。,无缺失。
+user_id,医生用户ID,字符串保留。,无缺失。
+answer_create_time,回答创建时间,本指标的时间依据，严格早于该时间戳的回答才进入前序集合，同时间戳不互为前序。,无缺失。
+answer_text_length,焦点回答有效字符数,复用 05f/知识分化度表冻结字段 current_answer_char_count；清洗规则为 CRLF/CR 归一为 LF 后 strip，再取 Python len()。不区分空白、标点、字母、数字，均按字符计。,无缺失。
+answer_has_valid_topic_distribution,焦点回答是否有有效主题分布,规则：回答内至少 1 句被赋予非 -1 主题。,False 表示该回答全部为噪声句或没有可用句子。
+answer_valid_topic_sentence_count,焦点回答有效主题句数,非 -1 主题句数；也是回答主题分布的分子分母。,全噪声回答为 0。
+prior_answer_count,同行拥挤度-前序回答数 N_ij,P_ij = 同一问题下 answer_create_time 严格早于焦点回答的全部现有回答；N_ij=|P_ij|。不因主题缺失或噪声删除任何回答。,首答 N=0，不是缺失。
+prior_total_char_count,同行拥挤度-前序总字符数 L_ij,L_ij=sum(current_answer_char_count over r in P_ij)，一条回答只累计一次，不使用 token 数，不使用主题清洗文本长度。,若前序文本长度有缺失，该值记缺失并在单独字段计数。
+prior_answer_text_length_missing_count,前序长度缺失条数,P_ij 中 current_answer_char_count 为缺失的回答条数。,本轮为 0。
+prior_valid_topic_answer_count,有效主题前序回答数 M_ij,V_ij=P_ij 中至少有一句非 -1 主题的回答；M_ij=|V_ij|。,噪声/缺失主题回答不计入 M，但仍计入 N。
+prior_topic_coverage_ratio,前序主题覆盖率,M_ij/N_ij。,N=0 时记缺失。
+prior_topic_entropy,同行知识多样性-Shannon熵,先对 V_ij 各回答主题分布等权平均得 q_k，再 H=-sum q_k*ln(q_k)；自然对数，0*ln0=0。,N=0 记 no_strict_prior；N>0 且 M=0 记 no_valid_prior_topic_distribution。
+prior_topic_breadth,同行知识广度,q_k>0 的有效主题个数。,与 entropy 相同缺失规则。
+prior_topic_distribution_avg_sum,前序平均分布之和,用于核查 q_k 之和约等于 1。,与 entropy 相同缺失规则。
+same_timestamp_group_size,同时间戳批次大小,同一问题同一 answer_create_time 的回答数；批次内各行在加入前序前同时计算。,无缺失。
+same_timestamp_group_order,同时间戳批内顺序,批内按 time_seq、seq 排序后的 0 基序号。,无缺失。

@@ -1,0 +1,127 @@
+{
+  "run_ts_utc": "2026-10-20T07:53:56+00:00",
+  "run_id": "peer_topic_diversity_run_20261020",
+  "label": "保留全部有效主题、含模板簇的探索性基线",
+  "scope": "flow_run100_answer_level_peer_topic_diversity_and_crowding_using_A_sentence_topics",
+  "input_counts": {
+    "questions": 100,
+    "answers": 859,
+    "answer_base_has_clean_topic_text": 859
+  },
+  "actual_topic_k": 33,
+  "topic_distribution_check": {
+    "valid_distribution_rows": 798,
+    "invalid_distribution_rows": 61,
+    "all_valid_p_non_negative": true,
+    "all_valid_p_sums_near_one": true,
+    "p_sum_min": 0.9999999999999997,
+    "p_sum_max": 1.0000000000000002,
+    "invalid_rows_with_nonmissing_p": 0
+  },
+  "focus_answer_topic_coverage": {
+    "has_valid_topic": 798,
+    "no_valid_topic": 61
+  },
+  "missing_reason_counts": [
+    {
+      "reason": "no_strict_prior",
+      "answer_count": 100
+    },
+    {
+      "reason": "no_valid_prior_topic_distribution",
+      "answer_count": 19
+    }
+  ],
+  "indicators": {
+    "prior_answer_count": {
+      "valid_count": 859,
+      "missing_count": 0,
+      "mean": 5.232829,
+      "std": 4.356285,
+      "min": 0.0,
+      "p25": 2.0,
+      "median": 4.0,
+      "p75": 8.0,
+      "max": 24.0
+    },
+    "prior_total_char_count": {
+      "valid_count": 859,
+      "missing_count": 0,
+      "mean": 453.055879,
+      "std": 426.735521,
+      "min": 0.0,
+      "p25": 113.0,
+      "median": 359.0,
+      "p75": 678.0,
+      "max": 2448.0
+    },
+    "prior_valid_topic_answer_count": {
+      "valid_count": 859,
+      "missing_count": 0,
+      "mean": 4.9383,
+      "std": 4.320906,
+      "min": 0.0,
+      "p25": 1.0,
+      "median": 4.0,
+      "p75": 7.0,
+      "max": 23.0
+    },
+    "prior_topic_coverage_ratio": {
+      "valid_count": 759,
+      "missing_count": 100,
+      "mean": 0.925868,
+      "std": 0.204697,
+      "min": 0.0,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "max": 1.0
+    },
+    "prior_topic_entropy": {
+      "valid_count": 740,
+      "missing_count": 119,
+      "mean": 0.741341,
+      "std": 0.477393,
+      "min": 0.0,
+      "p25": 0.377736,
+      "median": 0.735622,
+      "p75": 1.100042,
+      "max": 1.929032
+    },
+    "prior_topic_breadth": {
+      "valid_count": 740,
+      "missing_count": 119,
+      "mean": 3.795946,
+      "std": 2.208763,
+      "min": 1.0,
+      "p25": 2.0,
+      "median": 3.0,
+      "p75": 5.25,
+      "max": 11.0
+    },
+    "prior_topic_distribution_avg_sum": {
+      "valid_count": 740,
+      "missing_count": 119,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "max": 1.0
+    }
+  },
+  "entropy_reference": {
+    "ln_k": 3.4965075614664802,
+    "observed_min": 0.0,
+    "observed_max": 1.9290320949059327
+  },
+  "prior_coverage_summary": {
+    "answers_with_prior": 759,
+    "answers_with_valid_prior_topic_distribution": 740,
+    "answers_without_valid_prior_topic_distribution": 119,
+    "mean_coverage": 0.925868,
+    "median_coverage": 1.0
+  },
+  "scope_note": "本表由 100 个 flow_run 问题的 859 条医生回答组成；前序集合限定在当前清洗后的 flow_run 样本，该样本来源于核心职称 + 主要医院等级过滤后的回答库，不等于完整平台历史。"
+}

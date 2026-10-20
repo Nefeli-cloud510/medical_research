@@ -1,0 +1,25 @@
+{
+  "scope": "flow_run100_100_sample_statistics",
+  "question_count": 100,
+  "answer_count": 859,
+  "answer_count_per_question": {
+    "min": 1,
+    "median": 8,
+    "max": 25
+  },
+  "sentence_count_total": 2355,
+  "sentence_count_kept": 2355,
+  "sentence_count_dropped": 139,
+  "answer_clean_count": 859,
+  "answer_without_clean_count": 0,
+  "raw_answer_length": {
+    "min": 18,
+    "median": 66,
+    "max": 896
+  },
+  "clean_answer_length": {
+    "min": 11,
+    "median": 67,
+    "max": 902
+  }
+}

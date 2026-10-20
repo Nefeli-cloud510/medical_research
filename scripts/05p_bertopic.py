@@ -211,7 +211,7 @@ def build_topic_model():
         tokenizer=tokenize_for_topic_keywords,
         token_pattern=None,
         lowercase=False,
-        min_df=2,
+        min_df=1,
         ngram_range=(1, 2),
     )
     umap_model = UMAP(
@@ -230,6 +230,10 @@ def build_topic_model():
         prediction_data=True,
     )
     topic_model = BERTopic(
+        # Embeddings are passed externally, but BERTopic still uses `language`
+        # for its default preprocessing. Without multilingual mode its c-TF-IDF
+        # pipeline strips non-ASCII text before the custom jieba tokenizer runs.
+        language="multilingual",
         embedding_model=None,
         vectorizer_model=vectorizer_model,
         umap_model=umap_model,

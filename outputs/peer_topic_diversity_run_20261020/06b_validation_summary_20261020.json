@@ -1,0 +1,27 @@
+{
+  "row_level_direct_recheck": {
+    "total_rows_rechecked": 859,
+    "all_row_mismatches": 0,
+    "count_mismatches": 0
+  },
+  "mismatch_rows": [],
+  "distribution_constraints": {
+    "valid_distribution_rows": 798,
+    "invalid_distribution_rows": 61,
+    "all_valid_p_non_negative": true,
+    "all_valid_p_sums_near_one": true,
+    "p_sum_min": 0.9999999999999997,
+    "p_sum_max": 1.0000000000000002,
+    "invalid_rows_with_nonmissing_p": 0
+  },
+  "join_audit": {
+    "metrics_rows": 859,
+    "knowledge_metrics_rows": 859,
+    "metrics_events_not_in_knowledge": 0,
+    "knowledge_events_not_in_metrics": 0,
+    "join_rows": 859,
+    "count_match_rows": 859,
+    "char_match_rows": 859,
+    "knowledge_diff_missing_rows": 100
+  }
+}

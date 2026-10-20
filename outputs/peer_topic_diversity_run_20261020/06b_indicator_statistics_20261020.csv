@@ -1,0 +1,8 @@
+﻿indicator,valid_count,missing_count,mean,std,min,p25,median,p75,max
+prior_answer_count,859,0,5.232829,4.356285,0.0,2.0,4.0,8.0,24.0
+prior_total_char_count,859,0,453.055879,426.735521,0.0,113.0,359.0,678.0,2448.0
+prior_valid_topic_answer_count,859,0,4.9383,4.320906,0.0,1.0,4.0,7.0,23.0
+prior_topic_coverage_ratio,759,100,0.925868,0.204697,0.0,1.0,1.0,1.0,1.0
+prior_topic_entropy,740,119,0.741341,0.477393,0.0,0.377736,0.735622,1.100042,1.929032
+prior_topic_breadth,740,119,3.795946,2.208763,1.0,2.0,3.0,5.25,11.0
+prior_topic_distribution_avg_sum,740,119,1.0,0.0,1.0,1.0,1.0,1.0,1.0

@@ -1,0 +1,7 @@
+{
+  "run_ts_utc": "2026-10-20T03:42:00+00:00",
+  "unit": "sentence",
+  "topic_audit_csv": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\A_sentence_no_reduce\\sentence_topic_audit.csv",
+  "text_samples_csv": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\A_sentence_no_reduce\\sentence_text_samples.csv",
+  "valid_topic_count": 33
+}

@@ -1,0 +1,4 @@
+[2026-10-20T06:46:07+00:00] step=06a_compute_flow_run100_peer_topic_diversity
+[2026-10-20T06:46:07+00:00] action=strict_prior_crowding_and_sentence_topic_diversity
+[2026-10-20T06:46:07+00:00] status=completed
+[2026-10-20T06:46:07+00:00] details=rows=859; questions=100; actual_topic_k=33; valid_prior_topic_rows=650

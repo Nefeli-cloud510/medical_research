@@ -1,0 +1,179 @@
+{
+  "run_ts_utc": "2026-10-20T03:43:57+00:00",
+  "scope": "flow_run100_topic_ab_answer_no_reduce",
+  "unit_display_name": "回答级 B",
+  "inputs": {
+    "csv": "D:\\medical_research\\data\\analysis\\flow_run100_answer_text_for_topic_clean.csv",
+    "text_column": "answer_text_topic_clean",
+    "rows": 859,
+    "payload_hash": "70b34b452a71b5e6ab300b95c9a504e83f82d97e5c3ae637d2cc371c0174b1b8"
+  },
+  "outputs": {
+    "run_dir": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\B_answer_no_reduce",
+    "labels_csv": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\B_answer_no_reduce\\answer_labels.csv",
+    "topic_info_json": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\B_answer_no_reduce\\topic_info.json",
+    "embeddings_npy": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\B_answer_no_reduce\\assets\\embeddings\\answer_embeddings.npy"
+  },
+  "algorithm": {
+    "topic_model": "BERTopic",
+    "language": "multilingual",
+    "embedding_model": "BAAI/bge-base-zh-v1.5",
+    "embedding_model_source_used": "D:\\medical_research\\models\\bge-base-zh-v1.5",
+    "device_used": "cpu",
+    "vectorizer_min_df": 1,
+    "vectorizer_ngram_range": [
+      1,
+      2
+    ],
+    "requested_nr_topics_including_noise": null,
+    "topic_reduction_applied": false,
+    "actual_valid_topic_k": 16,
+    "initial_topic_count_including_noise": 17,
+    "umap_params": {
+      "a": null,
+      "angular_rp_forest": true,
+      "b": null,
+      "dens_frac": 0.3,
+      "dens_lambda": 2.0,
+      "dens_var_shift": 0.1,
+      "densmap": false,
+      "disconnection_distance": null,
+      "force_approximation_algorithm": false,
+      "init": "spectral",
+      "learning_rate": 1.0,
+      "local_connectivity": 1.0,
+      "low_memory": true,
+      "metric": "cosine",
+      "metric_kwds": null,
+      "min_dist": 0.0,
+      "n_components": 5,
+      "n_epochs": null,
+      "n_jobs": 1,
+      "n_neighbors": 15,
+      "negative_sample_rate": 5,
+      "output_dens": false,
+      "output_metric": "euclidean",
+      "output_metric_kwds": null,
+      "precomputed_knn": [
+        null,
+        null,
+        null
+      ],
+      "random_state": 20261014,
+      "repulsion_strength": 1.0,
+      "set_op_mix_ratio": 1.0,
+      "spread": 1.0,
+      "target_metric": "categorical",
+      "target_metric_kwds": null,
+      "target_n_neighbors": -1,
+      "target_weight": 0.5,
+      "tqdm_kwds": {
+        "desc": "Epochs completed",
+        "bar_format": "{desc}: {percentage:3.0f}%| {bar} {n_fmt}/{total_fmt} [{elapsed}]",
+        "disable": true
+      },
+      "transform_mode": "embedding",
+      "transform_queue_size": 4.0,
+      "transform_seed": 42,
+      "unique": false,
+      "verbose": false
+    },
+    "hdbscan_params": {
+      "algorithm": "best",
+      "allow_single_cluster": false,
+      "alpha": 1.0,
+      "approx_min_span_tree": true,
+      "branch_detection_data": false,
+      "cluster_selection_epsilon": 0.0,
+      "cluster_selection_epsilon_max": Infinity,
+      "cluster_selection_method": "eom",
+      "cluster_selection_persistence": 0.0,
+      "core_dist_n_jobs": 4,
+      "gen_min_span_tree": false,
+      "leaf_size": 40,
+      "match_reference_implementation": false,
+      "max_cluster_size": 0,
+      "memory": "Memory(location=None)",
+      "metric": "euclidean",
+      "min_cluster_size": 20,
+      "min_samples": 10,
+      "p": null,
+      "prediction_data": true
+    },
+    "embedding_cache_hit": false,
+    "embedding_manifest": {
+      "unit": "answer",
+      "rows": 859,
+      "input_hash": "1d236b91c03cd6fabf4261faf55e783482a1d8a656bca01cff6a64717ecdb89d",
+      "cache_key": "82bd70ba718012b69a5401693eff355c40e1d64721691068eb9d039757b033eb",
+      "model_name": "BAAI/bge-base-zh-v1.5",
+      "model_source_used": "D:\\medical_research\\models\\bge-base-zh-v1.5",
+      "created_utc": "2026-10-20T03:43:28+00:00",
+      "embedding_columns": 768,
+      "text_hash_file": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\B_answer_no_reduce\\assets\\embeddings\\answer_text_hashes.json",
+      "chunking": {
+        "max_seq_length": 512,
+        "chunk_capacity": 510,
+        "special_tokens_reserved": 2,
+        "chunking_strategy": "token_window_then_decode",
+        "docs_over_capacity": 4,
+        "total_flat_chunks": 863,
+        "max_chunks_per_doc": 2,
+        "normalize_embeddings": true,
+        "batch_size": 32
+      }
+    }
+  },
+  "counts": {
+    "rows_total": 859,
+    "valid_topic_rows": 808,
+    "noise_rows": 51,
+    "noise_rate": 0.059371,
+    "valid_topic_count": 16,
+    "topic_counts": {
+      "-1": 51,
+      "0": 101,
+      "1": 68,
+      "2": 67,
+      "3": 63,
+      "4": 62,
+      "5": 59,
+      "6": 58,
+      "7": 57,
+      "8": 54,
+      "9": 51,
+      "10": 33,
+      "11": 32,
+      "12": 31,
+      "13": 25,
+      "14": 24,
+      "15": 23
+    },
+    "max_topic_id": 0,
+    "max_topic_count": 101,
+    "max_topic_share": 0.117579,
+    "answer_level_coverage": 0.940629
+  },
+  "model_save": {
+    "saved": true,
+    "path": "D:\\medical_research\\outputs\\topic_ab_run_20261020\\B_answer_no_reduce\\bertopic_model"
+  },
+  "versions": {
+    "bertopic": "0.17.4",
+    "sentence_transformers": "6.1.0",
+    "sklearn": "1.9.1",
+    "jieba": "0.42.1",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "umap": "0.5.12",
+    "hdbscan": "unknown"
+  },
+  "notes": [
+    "No nr_topics reduction was requested; these are HDBSCAN initial topics.",
+    "Topic id -1 is treated as noise and is not a valid knowledge topic."
+  ],
+  "script": {
+    "canonical": "scripts/05r_topic_ab_pipeline.py",
+    "sha256": "c992e5971ad5be4710647c04461fdb76e3ee3f139880a2ddcacf265502216a88"
+  }
+}
